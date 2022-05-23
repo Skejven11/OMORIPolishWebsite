@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { FrontpageModule } from './screens/frontpage/frontpage.module';
 import { MainLayoutComponent } from './screens/main-layout/main-layout.component';
 import { TeamModule } from './screens/team/team.module';
+import { ApplyModule } from './screens/apply/apply.module';
+import { FaqModule } from './screens/faq/faq.module';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
       {
         path: 'team',
         loadChildren: () => import('./screens/team/team.module').then(m => m.TeamModule),
+      },
+      {
+        path: 'apply',
+        loadChildren: () => import('./screens/apply/apply.module').then(m => m.ApplyModule),
+      },
+      {
+        path: 'faq',
+        loadChildren: () => import('./screens/faq/faq.module').then(m => m.FaqModule),
       }
     ]
   }

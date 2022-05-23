@@ -1,7 +1,15 @@
-<div class=" flex items-center justify-center">
-    <div class=" border-2 border-black w-3/4 p-2">
-        <div class=" border 2 border-black w-full h-full">
-
+<div class="flex justify-center items-center w-full">
+    <div class="flex flex-col w-3/4 justify-center items-center mt-10">
+        <logo></logo>
+        <div class="relative w-full">
+            <div class="h-6"></div>
+            <navbar class="w-full absolute top-2 z-[2]"></navbar>
+            <div class=" border-2 border-black w-full p-1 min-h-[34rem]">
+                <div class="border border-black w-full h-full bg-white box-border">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
         </div>
+        <footer class="mt-10 mb-10"></footer>
     </div>
 </div>

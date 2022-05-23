@@ -10,3 +10,15 @@ html, body, app-root {
 div[ng-view] {
     @apply w-full;
 }
+
+.space-color-txt {
+    color: #6C0EFF;
+}
+
+.space-color-bg {
+    background-color: #6C0EFF;
+}
+
+.space-color-border {
+    border-color: #6C0EFF;
+}

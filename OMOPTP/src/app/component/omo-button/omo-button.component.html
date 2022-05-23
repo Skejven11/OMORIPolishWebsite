@@ -1,0 +1,6 @@
+<a [routerLink]="link" class="w-full">
+    <button class="border-2 border-black p-2 text-sm w-28 bg-white relative box-border" (mouseenter)="isMouseOver=true" (mouseleave)="isMouseOver=false">
+        {{ text }}
+        <img src="../../../assets/img/50a3e3178733e88.png" class="w-4 h-4 absolute right-[2%] top-[30%]" *ngIf="isMouseOver">
+    </button>
+</a>
