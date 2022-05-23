@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, app-root {
+    @apply w-full h-full m-0;
+}
+
+div[ng-view] {
+    @apply w-full;
+}
