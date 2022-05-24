@@ -1,12 +1,12 @@
 <div class="flex justify-center items-center w-full">
-    <div class="flex flex-col justify-center items-center mt-10"
+    <div class="flex flex-col justify-center items-center mt-6"
     [ngClass]="isBelowLg && isBelowMd ? 'w-full' : isBelowLg ? 'w-3/4' : 'w-3/5'">
-        <logo></logo>
+        <logo class="mb-2"></logo>
         <div class="relative w-full">
             <div class="h-6"></div>
             <navbar class="w-full absolute top-2 z-[2]"></navbar>
             <div class="border-2 border-black w-full p-1 min-h-[40rem] flex flex-col">
-                <div class="bg-black flex-1">
+                <div class="bg-black flex-1 text-white overflow-auto">
                     <router-outlet></router-outlet>
                 </div>
             </div>
