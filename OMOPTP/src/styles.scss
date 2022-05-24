@@ -2,8 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 html, body, app-root {
+    font-family: 'VT323', monospace;
     @apply w-full h-full m-0;
 }
 
@@ -22,3 +24,6 @@ div[ng-view] {
 .space-color-border {
     border-color: #6C0EFF;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

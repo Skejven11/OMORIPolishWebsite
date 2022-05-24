@@ -1,4 +1,4 @@
-<div class="flex w-full">
+<div class="flex w-full" *ngIf="!isBelowMd">
     <div class=" basis-1/2 flex justify-center">
         <omo-button [text]="'GŁÓWNA'" [link]="'/'"></omo-button>
     </div>
@@ -10,5 +10,23 @@
     </div>
     <div class=" basis-1/2 flex justify-center">
         <omo-button [text]="'FAQ'" [link]="'/faq'"></omo-button>
+    </div>
+</div>
+
+<div class="flex w-full justify-center items-center flex-col" *ngIf="isBelowMd">
+    <button class="w-10 h-10 border border-black bg-white flex justify-center items-center" (click)="toggleMenu()"
+    [ngClass]="displayMenu ? 'border-b-white' : ''">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+    </button>
+    <div class="w-52 bg-white flex flex-col" *ngIf="displayMenu" [@popMenu]>
+        <menu-item [text]="'GŁÓWNA'" [link]="''" (click)="toggleMenu()"></menu-item>
+        <span class="w-full h-px bg-black"></span>
+        <menu-item [text]="'DOŁĄCZ'" [link]="'/apply'" (click)="toggleMenu()"></menu-item>
+        <span class="w-full h-px bg-black"></span>
+        <menu-item [text]="'ZESPÓŁ'" [link]="'/team'" (click)="toggleMenu()"></menu-item>
+        <span class="w-full h-px bg-black"></span>
+        <menu-item [text]="'FAQ'" [link]="'/faq'" (click)="toggleMenu()"></menu-item>
     </div>
 </div>

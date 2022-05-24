@@ -9,8 +9,10 @@ import { MainLayoutComponent } from './screens/main-layout/main-layout.component
 import { NavbarComponent } from './screens/main-layout/navbar/navbar.component';
 import { LogoComponent } from './screens/main-layout/logo/logo.component';
 import { FooterComponent } from './screens/main-layout/footer/footer.component';
-import { OmoButtonComponent } from './component/omo-button/omo-button.component';
+import { OmoButtonComponent } from './components/omo-button/omo-button.component';
 import { FaqComponent } from './screens/faq/faq.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuItemComponent } from './screens/main-layout/navbar/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { FaqComponent } from './screens/faq/faq.component';
     LogoComponent,
     FooterComponent,
     OmoButtonComponent,
-    FaqComponent
+    FaqComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
