@@ -1,8 +1,11 @@
 <div class="flex justify-center items-center relative cursor-pointer" [routerLink]="'/'">
-    <h1 class="absolute right-[60%]" [ngClass]="isBelowMd ? 'text-6xl right-[55%]' : 'text-8xl'">OMORI</h1>
-    <div class="w-[13%] h-[13%] text-center">
+    <h1 class="absolute right-[60%] text-white" [ngClass]="isBelowMd ? 'text-6xl right-[60%]' : 'text-8xl'">OMORI</h1>
+    <div class="w-[13%] h-[13%]">
         <img src="../../../../assets/img/omori-pl.png">
-        <h1 [ngClass]="isBelowMd ? 'text-4xl left-[55%]' : 'text-6xl'">PO</h1>
+        <div class="flex justify-center text-center">
+            <h1 class="text-red-600" [ngClass]="isBelowMd ? 'text-4xl left-[55%]' : 'text-6xl'">P</h1>
+            <h1 class="text-white" [ngClass]="isBelowMd ? 'text-4xl left-[55%]' : 'text-6xl'">O</h1>
+        </div>
     </div>
-    <h1 class="absolute left-[60%]" [ngClass]="isBelowMd ? 'text-6xl left-[55%]' : 'text-8xl'">POLSKU</h1>
+    <h1 class="absolute left-[60%] text-red-600" [ngClass]="isBelowMd ? 'text-6xl left-[55%]' : 'text-8xl'">POLSKU</h1>
 </div>

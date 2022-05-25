@@ -13,6 +13,7 @@ import { OmoButtonComponent } from './components/omo-button/omo-button.component
 import { FaqComponent } from './screens/faq/faq.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuItemComponent } from './screens/main-layout/navbar/menu-item/menu-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MenuItemComponent } from './screens/main-layout/navbar/menu-item/menu-i
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
