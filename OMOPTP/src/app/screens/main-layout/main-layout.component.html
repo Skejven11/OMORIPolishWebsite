@@ -1,16 +1,28 @@
-<div class="flex justify-center items-center w-full">
+<div class="flex justify-center items-center w-full overflow-hidden relative background">
     <div class="flex flex-col justify-center items-center mt-6"
     [ngClass]="isBelowLg && isBelowMd ? 'w-full' : isBelowLg ? 'w-3/4' : 'w-3/5'">
         <logo class="mb-2"></logo>
         <div class="relative w-full">
             <div class="h-6"></div>
             <navbar class="w-full absolute top-2 z-[2]"></navbar>
-            <div class="border-2 border-black w-full p-1 min-h-[40rem] flex flex-col">
-                <div class="bg-black flex-1 text-white overflow-auto">
+            <div class="border-2 border-black w-full p-1 h-[60rem]">
+                <div class="bg-black h-full text-white overflow-auto">
                     <router-outlet></router-outlet>
                 </div>
             </div>
         </div>
-        <footer class="mt-4 mb-10"></footer>
+        <footer class="mt-4 mb-10 z-[2]"></footer>
+    </div>
+
+    <div>
+        <img class="absolute top-[0%] left-[5%] flip-image" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowLg">
+        <img class="absolute top-[0%] left-1/4 flip-image" src="../../../assets/img/bulb.gif" alt="">
+        <img class="absolute top-[0%]" [ngClass]="isBelowLg ? 'right-[25%]' : 'right-[22%]'" src="../../../assets/img/bulb.gif" alt="">
+        <img class="absolute top-[0%] right-[5%]" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowLg">
+
+        <img class="absolute left-[5%] flip-image" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-10%]'" src="../../../assets/img/abbi.gif" alt="">
+        <img class="absolute bottom-[-22%] left-1/4 flip-image" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
+        <img class="absolute bottom-[-22%] right-1/4" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
+        <img class="absolute right-[5%]" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-10%]'" src="../../../assets/img/abbi.gif" alt="">
     </div>
 </div>

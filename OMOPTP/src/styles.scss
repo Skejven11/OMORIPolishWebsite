@@ -25,6 +25,19 @@ div[ng-view] {
     border-color: #6C0EFF;
 }
 
-h1 {
-    text-shadow: 1px 1px black, -1px -1px black;
+
+.flip-image {
+    transform: scaleX(-1);
+}
+
+.background {
+    background-image: linear-gradient(white, black);
+}
+
+.text-shadow {
+    text-shadow: 1.5px 1.5px rgb(190, 0, 0), -1.5px -1.5px rgb(190, 0, 0);
+}
+
+.text-shadow-white {
+    text-shadow: 1px 1px white, -1px -1px white;
 }
