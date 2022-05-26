@@ -29,6 +29,13 @@ div[ng-view] {
     color: #F51011;
 }
 
+.red-border {
+    border-color: #F51011;
+}
+
+.red-bg {
+    background-color: #F51011;
+}
 
 .flip-image {
     transform: scaleX(-1);

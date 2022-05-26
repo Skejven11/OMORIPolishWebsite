@@ -1,0 +1,11 @@
+<div class="w-full h-56 bg-white">
+    <img class="w-full h-full" src="{{ imgSrc }}" alt="">
+</div>
+<div class="w-full text-center text-2xl mt-2">
+    {{ name }}
+</div>
+<p>{{ roles }}</p>
+<div class="flex gap-2 justify-center mt-2">
+    <a href="{{ discordLink }}" *ngIf="discordLink != ''"><fa-icon [icon]="faDiscord"></fa-icon></a>
+    <a href="{{ twitterLink }}" *ngIf="twitterLink != ''"><fa-icon [icon]="faTwitter"></fa-icon></a>
+</div>
