@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FrontpageModule } from './screens/frontpage/frontpage.module';
+import { ApplyComponent } from './screens/apply/apply.component';
+import { FaqComponent } from './screens/faq/faq.component';
+import { FrontpageComponent } from './screens/frontpage/frontpage.component';
 import { MainLayoutComponent } from './screens/main-layout/main-layout.component';
-import { TeamModule } from './screens/team/team.module';
-import { ApplyModule } from './screens/apply/apply.module';
-import { FaqModule } from './screens/faq/faq.module';
+import { TeamComponent } from './screens/team/team.component';
 
 const routes: Routes = [
   {
@@ -13,19 +13,28 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./screens/frontpage/frontpage.module').then(m => m.FrontpageModule),
+        redirectTo: '/frontpage',
+        pathMatch: 'full'
+      },
+      {
+        path: 'frontpage',
+        component: FrontpageComponent,
+        data: { animation: 'frontPage' }
       },
       {
         path: 'team',
-        loadChildren: () => import('./screens/team/team.module').then(m => m.TeamModule),
+        component: TeamComponent,
+        data: { animation: 'teamPage' }
       },
       {
         path: 'apply',
-        loadChildren: () => import('./screens/apply/apply.module').then(m => m.ApplyModule),
+        component: ApplyComponent,
+        data: { animation: 'applyPage' }
       },
       {
         path: 'faq',
-        loadChildren: () => import('./screens/faq/faq.module').then(m => m.FaqModule),
+        component: FaqComponent,
+        data: { animation: 'faqPage'}
       }
     ]
   }

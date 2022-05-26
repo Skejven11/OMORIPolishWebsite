@@ -1,10 +1,15 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { BreakpointState } from "@angular/cdk/layout"
+import { routerAnimation } from 'src/app/common/router-animation';
+import { ChildrenOutletContexts } from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
+  animations: [
+    routerAnimation
+  ]
 })
 export class MainLayoutComponent implements OnInit {
   public isBelowMd: boolean = false;
@@ -13,6 +18,7 @@ export class MainLayoutComponent implements OnInit {
   constructor(
     private screenWidthService: ScreenWidthService,
     private changeDetector: ChangeDetectorRef,
+    private contexts: ChildrenOutletContexts
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +31,10 @@ export class MainLayoutComponent implements OnInit {
       this.isBelowLg = isBelowLg.matches;
       this.changeDetector.detectChanges();
     })
+  }
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
 
 }

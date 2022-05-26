@@ -1,15 +1,15 @@
 <div class="flex w-full" *ngIf="!isBelowMd">
     <div class=" basis-1/2 flex justify-center">
-        <omo-button [text]="'GŁÓWNA'" [link]="'/'"></omo-button>
+        <omo-button [text]="'GŁÓWNA'" [link]="'/frontpage'" [isActive]="activatedRoute[0]"></omo-button>
     </div>
     <div class=" basis-1/2 flex justify-center">
-        <omo-button [text]="'DOŁĄCZ'" [link]="'/apply'"></omo-button>
+        <omo-button [text]="'DOŁĄCZ'" [link]="'/apply'" [isActive]="activatedRoute[1]"></omo-button>
     </div>
     <div class=" basis-1/2 flex justify-center">
-        <omo-button [text]="'ZESPÓŁ'" [link]="'/team'"></omo-button>
+        <omo-button [text]="'ZESPÓŁ'" [link]="'/team'" [isActive]="activatedRoute[2]"></omo-button>
     </div>
     <div class=" basis-1/2 flex justify-center">
-        <omo-button [text]="'FAQ'" [link]="'/faq'"></omo-button>
+        <omo-button [text]="'FAQ'" [link]="'/faq'" [isActive]="activatedRoute[3]"></omo-button>
     </div>
 </div>
 

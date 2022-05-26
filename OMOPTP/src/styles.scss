@@ -25,17 +25,21 @@ div[ng-view] {
     border-color: #6C0EFF;
 }
 
+.red-text {
+    color: #F51011;
+}
+
 
 .flip-image {
     transform: scaleX(-1);
 }
 
 .background {
-    background-image: linear-gradient(white, black);
+    background-image: white;
 }
 
 .text-shadow {
-    text-shadow: 1.5px 1.5px rgb(190, 0, 0), -1.5px -1.5px rgb(190, 0, 0);
+    text-shadow: 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px rgb(0, 0, 0);
 }
 
 .text-shadow-white {
