@@ -14,15 +14,17 @@ export const routerAnimation =
       query(':leave', [
         style({ opacity: 1 }),
         animate('300ms ease',
-          style({ opacity: 0, position: 'absolute' })
-        )
+          style({ opacity: 0 })
+        ),
+        style({ position: 'absolute '})
       ],
       { optional: true }
       ),
       query(':enter', [
-        style({ opacity: 0 }),
-        animate('300ms ease', 
-          style({ opacity: 1, position: 'relative' }))
+        style({ opacity: 0, position: 'relative' }),
+        animate('500ms ease', 
+          style({ opacity: 1 })
+        )
       ],
       { optional: true }
       )

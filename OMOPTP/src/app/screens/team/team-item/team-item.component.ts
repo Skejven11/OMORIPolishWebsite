@@ -17,13 +17,13 @@ export class TeamItemComponent implements OnInit {
 
   constructor(
     private changeDetector: ChangeDetectorRef,
-  ) { }
+  ) {
+   }
 
   ngOnInit(): void {
     this.imgSrc = this.imgSrc != "" ? "../../../../assets/img/" + this.imgSrc : "";
     this.discordLink = this.discordLink != "" ? "https://discordapp.com/users/" + this.discordLink : "";
     this.twitterLink = this.twitterLink != "" ? "https://twitter.com/" + this.twitterLink : "";
-    console.log(this.discordLink)
     this.changeDetector.detectChanges();
   }
 

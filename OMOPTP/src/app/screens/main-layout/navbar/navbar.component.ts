@@ -61,7 +61,6 @@ export class NavbarComponent implements OnInit {
         this.activatedRoute[3] = true;
         break;
     } 
-    this.changeDetector.detectChanges();
   }
 
 }
