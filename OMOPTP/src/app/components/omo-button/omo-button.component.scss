@@ -1,0 +1,10 @@
+.ripple-button {
+    @apply relative grid place-items-center overflow-hidden;
+
+    .ripple {
+       @apply absolute w-full opacity-50 rounded-[50%] translate-x-[-50%] translate-y-[-50%] scale-0;
+       content: '';
+       aspect-ratio: 1;
+    }
+}
+
