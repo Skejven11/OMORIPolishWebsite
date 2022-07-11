@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApplyComponent } from './screens/apply/apply.component';
+import { DownloadComponent } from './screens/download/download.component';
 import { FaqComponent } from './screens/faq/faq.component';
 import { FrontpageComponent } from './screens/frontpage/frontpage.component';
 import { MainLayoutComponent } from './screens/main-layout/main-layout.component';
@@ -21,7 +21,7 @@ import { TeamItemComponent } from './screens/team/team-item/team-item.component'
   declarations: [
     AppComponent,
     MainLayoutComponent,
-    ApplyComponent,
+    DownloadComponent,
     FaqComponent,
     FrontpageComponent,
     TeamComponent,

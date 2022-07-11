@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ApplyComponent } from './screens/apply/apply.component';
+import { DownloadComponent } from './screens/download/download.component';
 import { FaqComponent } from './screens/faq/faq.component';
 import { FrontpageComponent } from './screens/frontpage/frontpage.component';
 import { MainLayoutComponent } from './screens/main-layout/main-layout.component';
@@ -27,9 +27,9 @@ const routes: Routes = [
         data: { animation: 'teamPage' }
       },
       {
-        path: 'apply',
-        component: ApplyComponent,
-        data: { animation: 'applyPage' }
+        path: 'download',
+        component: DownloadComponent,
+        data: { animation: 'downloadPage' }
       },
       {
         path: 'faq',

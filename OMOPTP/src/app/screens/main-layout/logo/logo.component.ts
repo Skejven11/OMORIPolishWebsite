@@ -7,7 +7,7 @@ import { BreakpointState } from "@angular/cdk/layout"
   templateUrl: './logo.component.html',
 })
 export class LogoComponent implements OnInit {
-  public isBelowMd: boolean = false;
+  public isBelowSm: boolean = false;
 
   constructor(
     private screenWidthService: ScreenWidthService,
@@ -15,8 +15,8 @@ export class LogoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.screenWidthService.isBelowMd().subscribe((isBelowMd: BreakpointState) => {
-      this.isBelowMd = isBelowMd.matches;
+    this.screenWidthService.isBelowSm().subscribe((isBelowSm: BreakpointState) => {
+      this.isBelowSm = isBelowSm.matches;
       this.changeDetector.detectChanges();
     })
   }

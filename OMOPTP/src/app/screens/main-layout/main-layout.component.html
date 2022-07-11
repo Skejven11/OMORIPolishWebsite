@@ -1,12 +1,12 @@
 <div class="flex justify-center items-center w-full overflow-hidden relative background">
     <div class="flex flex-col justify-center items-center mt-6"
     [ngClass]="isBelowLg && isBelowMd ? 'w-full' : isBelowLg ? 'w-3/4' : 'w-3/5'">
-        <logo class="mb-2"></logo>
-        <div class="relative w-full">
+        <logo class="mb-2 relative" [@logoAnimation]></logo>
+        <div class="relative w-full" [@contentAnimation]>
             <div class="h-6"></div>
             <navbar class="w-full absolute top-2 z-[2]"></navbar>
             <div class="border-2 border-black w-full p-1 h-[60rem]">
-                <div class="bg-black h-full text-white overflow-auto py-12 text-lg relative" [@routerAnimation]="getRouteAnimationData()"
+                <div class="bg-black h-full text-white overflow-y-scroll py-16 text-lg relative scroll-py-16" [@routerAnimation]="getRouteAnimationData()"
                 [ngClass]="isBelowLg && isBelowMd ? 'px-10' : isBelowLg ? 'px-16' : 'px-24'">
                     <router-outlet></router-outlet>
                 </div>
