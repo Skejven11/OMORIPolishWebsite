@@ -1,9 +1,7 @@
-@import "/src/styles.scss";
-
 :host {
     @apply w-56 h-[21.5rem] box-border border-2 border-white text-center transition duration-300;
 
     &:hover {
-        @apply red-border;
+        border-color: var(--red-color);
     }
 }

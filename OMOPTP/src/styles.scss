@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --space-color: #6C0EFF;
+    --red-color: #F51011;
+}
+
 @font-face {
     font-family:"OMORI";
     src: url("/assets/font/OMORI_GAME2.ttf");
@@ -18,27 +23,27 @@ div[ng-view] {
 }
 
 .space-color-txt {
-    color: #6C0EFF;
+    color: var(--space-color);
 }
 
 .space-color-bg {
-    background-color: #6C0EFF;
+    background-color: var(--space-color);
 }
 
 .space-color-border {
-    border-color: #6C0EFF;
+    border-color: var(--space-color);
 }
 
 .red-text {
-    color: #F51011;
+    color: var(--red-color);
 }
 
 .red-border {
-    border-color: #F51011;
+    border-color: var(--red-color);
 }
 
 .red-bg {
-    background-color: #F51011;
+    background-color: var(--red-color)
 }
 
 .flip-image {
