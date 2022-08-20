@@ -5,8 +5,8 @@
         <div class="relative w-full" [@contentAnimation]>
             <div class="h-6"></div>
             <navbar class="w-full absolute top-2 z-[2]"></navbar>
-            <div class="border-2 border-black w-full p-1 h-[60rem]">
-                <div class="bg-black h-full text-white overflow-y-scroll py-16 text-lg relative scroll-py-16" [@routerAnimation]="getRouteAnimationData()"
+            <div class="border-2 border-black w-full p-1">
+                <div class="bg-black h-full text-white overflow-y-scroll text-lg py-16 relative scrollbar-hidden scroll-bottom min-h-[50rem]" [@routerAnimation]="getRouteAnimationData()"
                 [ngClass]="isBelowLg && isBelowMd ? 'px-10' : isBelowLg ? 'px-16' : 'px-24'">
                     <router-outlet></router-outlet>
                 </div>
@@ -15,15 +15,16 @@
         <footer class="mt-4 mb-10 z-[2]"></footer>
     </div>
 
-    <div>
+    <div class="">
         <img class="absolute top-[0%] left-[5%] flip-image" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
         <img class="absolute top-[-1%] left-1/4 flip-image" src="../../../assets/img/bulb.gif" alt="">
         <img class="absolute top-[-1%]" [ngClass]="isBelowLg ? 'right-[25%]' : 'right-[22%]'" src="../../../assets/img/bulb.gif" alt="">
         <img class="absolute top-[0%] right-[5%]" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowLg">
-
+    
         <img class="absolute left-[5%] flip-image" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="">
         <img class="absolute bottom-[-22%] left-1/4 flip-image" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
         <img class="absolute bottom-[-22%] right-1/4" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
         <img class="absolute right-[5%]" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="">
     </div>
+
 </div>
