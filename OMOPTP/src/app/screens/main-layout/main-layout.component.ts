@@ -7,6 +7,9 @@ import { ChildrenOutletContexts } from '@angular/router';
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
+  styles: [
+    ':host { position: relative }'
+  ],
   animations: [
     routerAnimation,
     contentAnimation,

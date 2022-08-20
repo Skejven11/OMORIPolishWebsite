@@ -61,3 +61,19 @@ div[ng-view] {
 .text-shadow-white {
     text-shadow: 1px 1px white, -1px -1px white;
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
+
+.scroll-bottom:after {
+    content: "";
+    display: block;
+    height: 50px;
+    width: 100%;
+}
