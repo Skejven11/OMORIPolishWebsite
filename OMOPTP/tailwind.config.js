@@ -3,6 +3,10 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
+    fontFamily: {
+      'omori': ['OMORI'],
+      'omori2': ['OMORI2']
+    },
     extend: {
       keyframes: {
         move: {

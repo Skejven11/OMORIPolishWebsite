@@ -1,11 +1,16 @@
-<div class="w-full h-[10.5rem] bg-white">
-    <img class="w-full h-full" src="{{ imgSrc }}" onerror="this.style.display='none'" alt="">
+<div class="p-2">
+    <div class="w-full h-[10.5rem] bg-white">
+        <img class="w-full h-full border-2 border-black" src="{{ imgSrc }}" onerror="this.style.display='none'" alt="">
+    </div>
+    <p class="text-xl mt-1">{{ roles }}</p>
+    <div class="flex gap-2 justify-center mt-1">
+        <a href="{{ discordLink }}" *ngIf="discordLink != ''"><fa-icon [icon]="faDiscord"></fa-icon></a>
+        <a href="{{ twitterLink }}" *ngIf="twitterLink != ''"><fa-icon [icon]="faTwitter"></fa-icon></a>
+    </div>
 </div>
-<div class="w-full text-center text-xl mt-2">
-    {{ name }}
-</div>
-<p class="text-lg">{{ roles }}</p>
-<div class="flex gap-2 justify-center mt-2">
-    <a href="{{ discordLink }}" *ngIf="discordLink != ''"><fa-icon [icon]="faDiscord"></fa-icon></a>
-    <a href="{{ twitterLink }}" *ngIf="twitterLink != ''"><fa-icon [icon]="faTwitter"></fa-icon></a>
+
+<div class="absolute top-[-1rem] w-full flex justify-center items-center">
+    <div class="w-36 h-9 text-2xl bg-black border-white border-2 rounded-sm text-white">
+        {{ name }}
+    </div>
 </div>

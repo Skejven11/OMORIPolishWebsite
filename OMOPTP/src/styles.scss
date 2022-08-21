@@ -13,6 +13,11 @@
     src: url("/assets/font/OMORI_GAME2.ttf");
   }
 
+@font-face {
+    font-family:"OMORI2";
+    src: url("/assets/font/Omori_game3-Regular.ttf");
+}
+
 html, body, app-root {
     font-family: 'OMORI';
     @apply w-full h-full m-0;

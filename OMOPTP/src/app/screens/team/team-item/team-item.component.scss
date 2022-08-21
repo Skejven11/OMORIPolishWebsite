@@ -1,5 +1,5 @@
 :host {
-    @apply w-44 h-[17rem] box-border border-2 border-white text-center transition duration-300 rounded-sm;
+    @apply w-44 h-[15.5rem] box-border border-2 border-black bg-white text-center transition duration-300 rounded-sm text-black relative;
 
     &:hover {
         border-color: var(--red-color);
@@ -7,7 +7,7 @@
 }
 
 a {
-    @apply text-sm;
+    @apply text-lg;
 
 
     &:hover {
