@@ -1,10 +1,10 @@
 <div class="flex justify-center items-center w-full overflow-hidden relative background">
-    <div class="flex flex-col justify-center items-center mt-12"
-    [ngClass]="isBelowLg && isBelowMd ? 'w-full' : isBelowLg ? 'w-3/4' : 'w-3/5'">
-        <logo class="mb-14 relative" [@logoAnimation]></logo>
-        <div class="relative w-full" [@contentAnimation]>
+    <div class="flex flex-col justify-center items-center"
+    [ngClass]="isBelowLg && isBelowMd ? 'w-full mt-4' : isBelowLg ? 'w-3/4 mt-12' : 'w-3/5 mt-12'">
+        <logo class="relative" [@logoAnimation]="isReloading ? false : true" [ngClass]="isBelowMd ? 'mb-4' : 'mb-14'"></logo>
+        <div class="relative w-full" [@contentAnimation]="isReloading ? false : true">
             <div class="h-6"></div>
-            <navbar class="w-full absolute top-2 z-[2]"></navbar>
+            <navbar class="w-full absolute top-0 z-[2]"></navbar>
             <div class="border-2 border-black w-full p-1">
                 <div class="bg-black h-full text-white overflow-y-scroll text-lg py-24 relative scrollbar-hidden scroll-bottom min-h-[50rem]" [@routerAnimation]="getRouteAnimationData()"
                 [ngClass]="isBelowLg && isBelowMd ? 'px-10' : isBelowLg ? 'px-16' : 'px-24'">
@@ -16,10 +16,10 @@
     </div>
 
     <div class="">
-        <img class="absolute top-[0%] left-[5%] flip-image" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
-        <img class="absolute top-[0%] left-1/4 flip-image" src="../../../assets/img/bulb.gif" alt="">
-        <img class="absolute top-[0%]" [ngClass]="isBelowLg ? 'right-[25%]' : 'right-[22%]'" src="../../../assets/img/bulb.gif" alt="">
-        <img class="absolute top-[0%] right-[5%]" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowLg">
+        <img class="absolute top-[0%] left-[5%] flip-image" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowMd">
+        <img class="absolute top-[0%] left-1/4 flip-image" src="../../../assets/img/bulb.gif" alt="" *ngIf="!isBelowLg">
+        <img class="absolute top-[0%]" [ngClass]="isBelowLg ? 'right-[25%]' : 'right-[22%]'" src="../../../assets/img/bulb.gif" alt="" *ngIf="!isBelowLg">
+        <img class="absolute top-[0%] right-[5%]" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowMd">
     
         <img class="absolute left-[5%] flip-image" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
         <img class="absolute bottom-[-22%] left-1/4 flip-image" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">

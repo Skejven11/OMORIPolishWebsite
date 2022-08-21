@@ -6,7 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MenuItemComponent implements OnInit {
   @Input() link: string = "";
-  public isMouseOver: boolean = false;
   @Input() text: string = "";
 
   constructor() { }

@@ -3,6 +3,7 @@ import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { BreakpointState } from "@angular/cdk/layout"
 import { routerAnimation, contentAnimation, logoAnimation } from 'src/app/common/animations';
 import { ChildrenOutletContexts } from '@angular/router';
+import { faWindows } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-main-layout',
@@ -19,6 +20,8 @@ import { ChildrenOutletContexts } from '@angular/router';
 export class MainLayoutComponent implements OnInit {
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
+
+  public isReloading: boolean = (window.performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming).type === "reload";
 
   constructor(
     private screenWidthService: ScreenWidthService,
