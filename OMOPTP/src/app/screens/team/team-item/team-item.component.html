@@ -1,10 +1,10 @@
-<div class="w-full h-56 bg-white">
+<div class="w-full h-[10.5rem] bg-white">
     <img class="w-full h-full" src="{{ imgSrc }}" onerror="this.style.display='none'" alt="">
 </div>
-<div class="w-full text-center text-2xl mt-2">
+<div class="w-full text-center text-xl mt-2">
     {{ name }}
 </div>
-<p>{{ roles }}</p>
+<p class="text-lg">{{ roles }}</p>
 <div class="flex gap-2 justify-center mt-2">
     <a href="{{ discordLink }}" *ngIf="discordLink != ''"><fa-icon [icon]="faDiscord"></fa-icon></a>
     <a href="{{ twitterLink }}" *ngIf="twitterLink != ''"><fa-icon [icon]="faTwitter"></fa-icon></a>
