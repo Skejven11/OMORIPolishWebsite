@@ -33,15 +33,11 @@ export const routerAnimation =
 
   export const logoAnimation =
   trigger('logoAnimation', [
-    state('void',
-      style({
-        opacity: 0.1,
-        display: 'absolute',
-        top: -160
-      })),
-    transition('void => *', [
+    transition('* => *', [
       query(':self', [
-        animate('3s ease-in-out')
+        style({ opacity: 0, display: 'absolute',
+        top: -160 }),
+        animate('2s ease-in-out', style({ opacity: 1, display: 'relative', top: 0 }))
       ])
     ])
   ]);
@@ -51,7 +47,7 @@ export const routerAnimation =
     transition('* => *', [
       query(':self', [
         style({ opacity: 0 }),
-        animate('1s 3s ease-in-out', style({ opacity: 1 }))
+        animate('1s 2s ease-in-out', style({ opacity: 1 }))
       ])
     ])
   ]);
