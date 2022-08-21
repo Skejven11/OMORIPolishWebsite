@@ -17,14 +17,14 @@
 
     <div class="">
         <img class="absolute top-[0%] left-[5%] flip-image" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
-        <img class="absolute top-[-1%] left-1/4 flip-image" src="../../../assets/img/bulb.gif" alt="">
-        <img class="absolute top-[-1%]" [ngClass]="isBelowLg ? 'right-[25%]' : 'right-[22%]'" src="../../../assets/img/bulb.gif" alt="">
+        <img class="absolute top-[0%] left-1/4 flip-image" src="../../../assets/img/bulb.gif" alt="">
+        <img class="absolute top-[0%]" [ngClass]="isBelowLg ? 'right-[25%]' : 'right-[22%]'" src="../../../assets/img/bulb.gif" alt="">
         <img class="absolute top-[0%] right-[5%]" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowLg">
     
-        <img class="absolute left-[5%] flip-image" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="">
+        <img class="absolute left-[5%] flip-image" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
         <img class="absolute bottom-[-22%] left-1/4 flip-image" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
         <img class="absolute bottom-[-22%] right-1/4" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
-        <img class="absolute right-[5%]" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="">
+        <img class="absolute right-[5%]" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
     </div>
 
 </div>

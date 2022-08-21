@@ -1,9 +1,9 @@
 <a [routerLink]="link" class="w-full">
-    <div class="border-2 border-black w-32 h-12 bg-white p-1">
-        <button class="w-full h-full bg-black text-xl text-white relative box-border" (mouseenter)="isMouseOver=true" (mouseleave)="isMouseOver=false"
+    <div class="border-2 border-black w-36 h-14 bg-white p-1">
+        <button class="w-full h-full bg-black text-2xl text-white relative box-border" (mouseenter)="isMouseOver=true" (mouseleave)="isMouseOver=false"
         [ngClass]="isActive ? 'red-text' : ''">
             {{ text }}
-            <img src="../../../assets/img/red-hand.png" class="w-6 h-4 absolute right-[4%] top-[30%] animate-left-right" *ngIf="isMouseOver">
+            <img src="../../../assets/img/red-hand.png" class="w-6 h-4 absolute right-[4%] top-[35%] animate-left-right" *ngIf="isMouseOver">
         </button>
     </div>
 </a>

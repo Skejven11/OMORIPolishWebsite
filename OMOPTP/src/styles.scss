@@ -5,7 +5,7 @@
 
 :root {
     --space-color: #6C0EFF;
-    --red-color: #F51011;
+    --red-color: #ff3e3e;
 }
 
 @font-face {
@@ -76,4 +76,8 @@ div[ng-view] {
     display: block;
     height: 50px;
     width: 100%;
+}
+
+.jsmsg {
+    @apply flex justify-center flex-col items-center w-full h-full text-3xl px-10;
 }
