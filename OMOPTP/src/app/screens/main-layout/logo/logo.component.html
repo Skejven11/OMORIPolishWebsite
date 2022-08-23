@@ -1,11 +1,12 @@
 <div class="flex justify-center items-center relative z-[2] font-omori2">
     <h1 class="absolute right-[60%] text-black " [ngClass]="isBelowMd ? 'text-[2.3rem] right-[60%]' : isBelowLg ? 'text-[3.5rem]' : 'text-[5rem]'">OMORI</h1>
     <div class="w-[10%]">
-        <img class="cursor-pointer w-[50rem]" src="../../../../assets/img/bunny.gif"  [routerLink]="'/frontpage'" [ngClass]="isBelowMd ? 'w-[30rem]' : 'w-[50rem]'">
+        <img class="cursor-pointer w-[50rem] z-[2] relative" src="../../../../assets/img/bunny.gif" (click)="callCanvas()" [ngClass]="isBelowMd ? 'w-[30rem]' : 'w-[50rem]'">
         <div class="flex">
             <h1 class="text-black " [ngClass]="isBelowMd ? 'text-2xl' : 'text-[3rem]'">P</h1>
             <h1 class="text-black " [ngClass]="isBelowMd ? 'text-2xl' : 'text-[3rem]'">O</h1>
         </div>
     </div>
     <h1 class="absolute left-[60%] text-black " [ngClass]="isBelowMd ? 'text-[2rem] right-[60%]' : isBelowLg ? 'text-[3.5rem]' : 'text-[5rem]'">POLSKU</h1>
+    <canvastar class="absolute z-0" #canvastar></canvastar>
 </div>

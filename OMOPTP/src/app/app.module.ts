@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuItemComponent } from './screens/main-layout/navbar/menu-item/menu-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TeamItemComponent } from './screens/team/team-item/team-item.component';
+import { CanvastarComponent } from './components/canvastar/canvastar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TeamItemComponent } from './screens/team/team-item/team-item.component'
     FooterComponent,
     OmoButtonComponent,
     MenuItemComponent,
-    TeamItemComponent
+    TeamItemComponent,
+    CanvastarComponent
   ],
   imports: [
     BrowserModule,

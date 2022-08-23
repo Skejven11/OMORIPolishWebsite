@@ -1,6 +1,7 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
-import { BreakpointState } from "@angular/cdk/layout"
+import { BreakpointState } from "@angular/cdk/layout";
+import { CanvastarComponent } from 'src/app/components/canvastar/canvastar.component';
 
 @Component({
   selector: 'logo',
@@ -9,6 +10,7 @@ import { BreakpointState } from "@angular/cdk/layout"
 export class LogoComponent implements OnInit {
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
+  @ViewChild('canvastar') canvastar!: CanvastarComponent;
 
   constructor(
     private screenWidthService: ScreenWidthService,
@@ -25,6 +27,10 @@ export class LogoComponent implements OnInit {
       this.isBelowLg = isBelowLg.matches;
       this.changeDetector.detectChanges();
     })
+  }
+
+  callCanvas() {
+    this.canvastar.launchStar()
   }
 
 }
