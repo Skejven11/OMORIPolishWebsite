@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { BreakpointState } from '@angular/cdk/layout';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { ScreenWidthService } from 'src/app/common/screen-width.service';
 
 @Component({
   selector: 'canvastar',
@@ -22,8 +24,11 @@ export class CanvastarComponent implements AfterViewInit {
   private speed: number = 35;
   private longevity: number = 40
   private cuteSound;
+  private isBelowMd: boolean = false;
 
   constructor(
+    private screenWidthService: ScreenWidthService,
+    private changeDetector: ChangeDetectorRef
   ) { }
 
   ngAfterViewInit(): void {
@@ -41,6 +46,11 @@ export class CanvastarComponent implements AfterViewInit {
     this.cuteSound.src = "../../../assets/sounds/BA_cute.ogg";
     this.cuteSound.load();
     this.cuteSound.volume = 0.4;
+
+    this.screenWidthService.isBelowMd().subscribe((isBelowMd: BreakpointState) => {
+      this.isBelowMd = isBelowMd.matches;
+      this.changeDetector.detectChanges();
+    })
   }
 
   async launchStar() {
@@ -49,11 +59,12 @@ export class CanvastarComponent implements AfterViewInit {
     let leftSide: boolean = this.randomiseNumber(3, 1) === 1 ? true : false;
 
     this.image.x = this.canvas.nativeElement.width / 2;
-    this.image.y = this.canvas.nativeElement.height * 1/4;
-    this.image.velocityY = 10;
-    this.image.velocityX = leftSide ? -this.randomiseNumber(20, 7) : this.randomiseNumber(20, 7);
-    this.image.width = 50;
-    this.image.height = 50;
+    this.image.y = this.isBelowMd ? this.canvas.nativeElement.height * 1/3 : this.canvas.nativeElement.height * 1/4;
+    this.image.velocityY = this.isBelowMd ? 5 : 10;
+    if (this.isBelowMd) this.image.velocityX = leftSide ? -this.randomiseNumber(14, 7) : this.randomiseNumber(14, 7);
+    else this.image.velocityX = leftSide ? -this.randomiseNumber(20, 7) : this.randomiseNumber(20, 7);
+    this.image.width = this.isBelowMd ? 40 : 50;
+    this.image.height = this.isBelowMd ? 40 : 50;
 
     this.alreadyLaunched = true;
     this.cuteSound.play();

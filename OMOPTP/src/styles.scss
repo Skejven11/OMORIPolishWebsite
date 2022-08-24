@@ -86,3 +86,13 @@ div[ng-view] {
 .jsmsg {
     @apply flex justify-center flex-col items-center w-full h-full text-3xl px-10;
 }
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
