@@ -4,7 +4,7 @@
         <logo class="relative" [@logoAnimation]="isReloading ? false : true" [ngClass]="isBelowMd ? 'mb-4' : 'mb-14'"></logo>
         <div class="relative w-full" [@contentAnimation]="isReloading ? false : true">
             <div class="h-6"></div>
-            <navbar class="w-full absolute top-0 z-[2]"></navbar>
+            <navbar class="w-full absolute top-1 z-[2]"></navbar>
             <div class="border-2 border-black w-full p-1">
                 <div class="bg-black h-full text-white overflow-y-scroll text-lg relative scrollbar-hidden scroll-bottom min-h-[50rem]" [@routerAnimation]="getRouteAnimationData()"
                 [ngClass]="isBelowLg && isBelowMd ? 'px-10 py-14' : isBelowLg ? 'px-16 py-20' : 'px-24 py-24'">
