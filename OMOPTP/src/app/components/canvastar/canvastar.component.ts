@@ -20,7 +20,8 @@ export class CanvastarComponent implements AfterViewInit {
   private gravity: number = -2;
   private alreadyLaunched: boolean = false;
   private speed: number = 35;
-  private longevity: number = 30
+  private longevity: number = 40
+  private cuteSound;
 
   constructor(
   ) { }
@@ -36,6 +37,10 @@ export class CanvastarComponent implements AfterViewInit {
       velocityY: 0
     }
     this.ctx = this.canvas.nativeElement.getContext('2d');
+    this.cuteSound = new Audio();
+    this.cuteSound.src = "../../../assets/sounds/BA_cute.ogg";
+    this.cuteSound.load();
+    this.cuteSound.volume = 0.4;
   }
 
   async launchStar() {
@@ -46,11 +51,12 @@ export class CanvastarComponent implements AfterViewInit {
     this.image.x = this.canvas.nativeElement.width / 2;
     this.image.y = this.canvas.nativeElement.height * 1/4;
     this.image.velocityY = 10;
-    this.image.velocityX = leftSide ? -this.randomiseNumber(15, 7) : this.randomiseNumber(15, 7);
+    this.image.velocityX = leftSide ? -this.randomiseNumber(20, 7) : this.randomiseNumber(20, 7);
     this.image.width = 50;
     this.image.height = 50;
 
     this.alreadyLaunched = true;
+    this.cuteSound.play();
     for (let i=0;i<this.longevity;i++) {
         this.drawStar();
         this.updateStar();
