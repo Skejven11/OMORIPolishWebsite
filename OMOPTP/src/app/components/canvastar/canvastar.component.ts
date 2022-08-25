@@ -9,7 +9,7 @@ import { ScreenWidthService } from 'src/app/common/screen-width.service';
 export class CanvastarComponent implements AfterViewInit {
   @ViewChild('canvas', {static: true}) canvas: ElementRef<HTMLCanvasElement>;
   @ViewChild('starImage') starImage: ElementRef;
-  private ctx: CanvasRenderingContext2D;
+
   private image: {
     imageSrc: HTMLImageElement,
     x: number,
@@ -19,10 +19,12 @@ export class CanvastarComponent implements AfterViewInit {
     velocityX: number,
     velocityY: number
   }
+
+  private ctx: CanvasRenderingContext2D;
   private gravity: number = -2;
   private alreadyLaunched: boolean = false;
   private speed: number = 35;
-  private longevity: number = 40
+  private longevity: number = 45
   private cuteSound;
   private isBelowMd: boolean = false;
 
@@ -61,7 +63,7 @@ export class CanvastarComponent implements AfterViewInit {
     this.image.x = this.canvas.nativeElement.width / 2;
     this.image.y = this.isBelowMd ? this.canvas.nativeElement.height * 1/3 : this.canvas.nativeElement.height * 1/4;
     this.image.velocityY = this.isBelowMd ? 5 : 10;
-    if (this.isBelowMd) this.image.velocityX = leftSide ? -this.randomiseNumber(14, 7) : this.randomiseNumber(14, 7);
+    if (this.isBelowMd) this.image.velocityX = leftSide ? -this.randomiseNumber(12, 1) : this.randomiseNumber(12, 1);
     else this.image.velocityX = leftSide ? -this.randomiseNumber(20, 7) : this.randomiseNumber(20, 7);
     this.image.width = this.isBelowMd ? 40 : 50;
     this.image.height = this.isBelowMd ? 40 : 50;
