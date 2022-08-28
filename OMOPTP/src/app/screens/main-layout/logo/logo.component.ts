@@ -11,6 +11,7 @@ export class LogoComponent implements OnInit {
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
   @ViewChild('canvastar') canvastar!: CanvastarComponent;
+  public bunny: string = "bunny";
 
   constructor(
     private screenWidthService: ScreenWidthService,
@@ -31,6 +32,12 @@ export class LogoComponent implements OnInit {
 
   callCanvas() {
     this.canvastar.launchStar()
+  }
+
+  changeToPope() {
+    this.bunny = "aubrey2137"
+    this.canvastar.isPopeEnabled = true;
+    this.canvastar.cuteSound.src = "../../../assets/sounds/jestmozliwe.mp3";
   }
 
 }

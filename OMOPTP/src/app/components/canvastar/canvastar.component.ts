@@ -9,14 +9,16 @@ import { ScreenWidthService } from 'src/app/common/screen-width.service';
 export class CanvastarComponent implements AfterViewInit {
   @ViewChild('canvas', {static: true}) canvas: ElementRef<HTMLCanvasElement>;
   @ViewChild('starImage') starImage: ElementRef;
+  @ViewChild('kremowkaImage') kremowkaImage: ElementRef;
 
   private ctx: CanvasRenderingContext2D;
   private alreadyLaunched: boolean = false;
   private speed: number = 35;
   private longevity: number = 45
-  private cuteSound;
+  public cuteSound;
   private isBelowMd: boolean = false;
   private leftSide: boolean = false;
+  public isPopeEnabled: boolean = false;
 
   constructor(
     private screenWidthService: ScreenWidthService,
@@ -51,7 +53,7 @@ export class CanvastarComponent implements AfterViewInit {
     let width = this.isBelowMd ? 40 : 50;
     let height = this.isBelowMd ? 40 : 50;
 
-    let star = new StarElement(width, height, x, y, this.starImage.nativeElement, velocityX, velocityY);
+    let star = new StarElement(width, height, x, y, this.isPopeEnabled ? this.kremowkaImage.nativeElement : this.starImage.nativeElement, velocityX, velocityY);
 
     this.alreadyLaunched = true;
     this.cuteSound.play();
