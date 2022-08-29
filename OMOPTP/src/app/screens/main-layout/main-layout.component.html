@@ -8,12 +8,11 @@
             <div class="border-2 border-black w-full p-1">
                 <div class="bg-black h-full text-white overflow-y-scroll text-lg relative scrollbar-hidden scroll-bottom min-h-[50rem]" [@routerAnimation]="getRouteAnimationData()"
                 [ngClass]="isBelowLg && isBelowMd ? 'px-10 py-14' : isBelowLg ? 'px-16 py-20' : 'px-24 py-24'">
-                    <img class="absolute top-[35%] left-[18%]" width="600" height="600" src="./../../../assets/img/pope.png" alt="" *ngIf="isPopeAlive">
                     <router-outlet></router-outlet>
                 </div>
             </div>
         </div>
-        <footer class="mt-4 mb-10 z-[2]"></footer>
+        <footer class="mt-10 mb-10 z-[2]"></footer>
     </div>
 
     <div class="">
@@ -32,4 +31,14 @@
         <img class="absolute right-[5%]" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
     </div>
 
+    <div class="fixed border-2 bottom-[-2px] border-red-500 flex flex-col szlam z-10 bg-white" 
+    [@adAnimation] *ngIf="showAd" [ngClass]="isBelowLg ? 'w-full h-[14rem]' : 'w-[60rem] h-[18rem]'">
+        <button class="w-5 h-5 border-b-2 border-l-2 border-red-500 text-2xl p-[2px] bg-white ml-auto" (click)="hideAd()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"> <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/> </svg> 
+        </button>
+        <div class="w-full h-16 mt-auto bg-black text-center text-red-500 p-2">
+            <p class="text-2xl leading-[1.5rem]">GORĄCE SZLAMICE W TWOJEJ OKOLICY!</p>
+            <a href="https://www.youtube.com/watch?v=7xl5kRE19y4" class="text-xl underline">Kliknij już teraz!!!!!!!!!!</a>
+        </div>
+    </div>
 </div>

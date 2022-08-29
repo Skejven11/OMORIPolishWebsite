@@ -50,8 +50,8 @@ export class CanvastarComponent implements AfterViewInit {
     let velocityX = 0;
     if (this.isBelowMd) velocityX = this.leftSide ? -this.randomiseNumber(12, 3) : this.randomiseNumber(12, 3);
     else velocityX = this.leftSide ? -this.randomiseNumber(20, 7) : this.randomiseNumber(20, 7);
-    let width = this.isBelowMd ? 40 : 50;
-    let height = this.isBelowMd ? 40 : 50;
+    let width = this.isBelowMd ? 27 : 50;
+    let height = this.isBelowMd ? 27 : 50;
 
     let star = new StarElement(width, height, x, y, this.isPopeEnabled ? this.kremowkaImage.nativeElement : this.starImage.nativeElement, velocityX, velocityY);
 

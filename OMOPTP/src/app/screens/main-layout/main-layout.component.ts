@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { BreakpointState } from "@angular/cdk/layout"
-import { routerAnimation, contentAnimation, logoAnimation } from 'src/app/common/animations';
+import { routerAnimation, contentAnimation, logoAnimation, adAnimation } from 'src/app/common/animations';
 import { ChildrenOutletContexts } from '@angular/router';
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import { LogoComponent } from './logo/logo.component';
@@ -15,7 +15,8 @@ import { LogoComponent } from './logo/logo.component';
   animations: [
     routerAnimation,
     contentAnimation,
-    logoAnimation
+    logoAnimation,
+    adAnimation
   ]
 })
 export class MainLayoutComponent implements OnInit {
@@ -25,6 +26,8 @@ export class MainLayoutComponent implements OnInit {
 
   public popeLine;
   public isPopeAlive: boolean = false;
+
+  public showAd: boolean = true;
 
   public firstBulb: number = 0;
   public secondBulb: number = 0;
@@ -89,14 +92,17 @@ export class MainLayoutComponent implements OnInit {
   }
 
   checkIfYellow() {
-    var funnyNumber: string = ""+this.firstBulb+this.secondBulb+this.thirdBulb+this.fourthBulb;
-    console.log(funnyNumber);
+    var funnyNumber: string = "" + this.firstBulb + this.secondBulb + this.thirdBulb + this.fourthBulb;
     if (funnyNumber === "2137") {
       this.popeLine.load();
       this.popeLine.play();
       this.logo.changeToPope();
       this.isPopeAlive = true;
     }
+  }
+
+  hideAd() {
+    this.showAd = false;
   }
 
 }

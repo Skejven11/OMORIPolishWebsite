@@ -52,4 +52,14 @@ export const routerAnimation =
     ])
   ]);
 
+  export const adAnimation =
+  trigger('adAnimation', [
+    transition('void => *', [
+      query(':self', [
+        style({ bottom: -300 }),
+        animate('2s 8s ease-in-out', style({ bottom: -2 }))
+      ])
+    ])
+  ]);
+
   
