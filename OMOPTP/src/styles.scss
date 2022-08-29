@@ -96,3 +96,10 @@ div[ng-view] {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
+
+.szlam {
+    background-image: url("/assets/img/szlamice.gif");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
