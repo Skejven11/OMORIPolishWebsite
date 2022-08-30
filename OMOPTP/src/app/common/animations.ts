@@ -57,7 +57,7 @@ export const routerAnimation =
     transition('void => *', [
       query(':self', [
         style({ bottom: -300 }),
-        animate('2s 8s ease-in-out', style({ bottom: -2 }))
+        animate('2s 10s ease-in-out', style({ bottom: -2 }))
       ])
     ])
   ]);
