@@ -1,9 +1,19 @@
 
 <div>
-    <h1 class="text-center mb-10" [ngClass]="isBelowMd ? 'text-4xl' : 'text-6xl'">
-        Witaj na stronie fanowskiego spolszczenia OMORI!
+    <h1 class="text-center" [ngClass]="isBelowMd ? 'text-4xl mb-10 leading-8' : 'text-[3.25rem] mb-16 leading-10'">
+        <b>Witajcie na stronie fanowskiego spolszczenia OMORI!</b>
     </h1>
-    <p class="text-xl">
-        aaaaaaaa
+    <p class="mb-3" [ngClass]="isBelowMd ? 'text-xl' : 'text-2xl'">
+        Jesteśmy grupką osób które zebrały się razem, aby stworzyć polską lokalizację gry OMORI dla Was! Chcemy, żeby jak najwięcej osób mogło poznać historię 
+        barwnej grupki przyjaciół, a znajomość języka angielskiego nie była tutaj przeszkodą. Pracujemy w wolnym czasie i za darmo, dlatego bądźcie z nami cierpliwi!
+        Zaczęliśmy pracę w sierpniu 2022 roku, nie mamy jeszcze ściśle ustalonej daty premiery tłumaczenia, ale postaram się aktualizować stronę co jakiś czas
+        z wiadomościami na temat stanu prac. 
+        <br><br>
+        Jeżeli macie jakieś pytania, kierujcie się do <a [routerLink]="'/faq'" class="text-red-500">często zadawanych pytań</a>,
+        a gdy owe odpowiedzi nie zaspokoiły waszej żądzy wiedzy, zachęcamy do dołączenia do naszego serwera na Discordzie do którego link znajduje się 
+        <a href="" class="text-red-500">tu</a> lub poniżej.
+        <br>
     </p>
+    <p class="mb-2">PS kliknij w królika.</p>
+    <hr>
 </div>
