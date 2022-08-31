@@ -54,7 +54,7 @@ export const routerAnimation =
 
   export const adAnimation =
   trigger('adAnimation', [
-    transition('void => *', [
+    transition('* => true', [
       query(':self', [
         style({ bottom: -300 }),
         animate('2s 10s ease-in-out', style({ bottom: -2 }))

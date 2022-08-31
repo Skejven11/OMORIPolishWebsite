@@ -1,11 +1,14 @@
 <div class="p-2">
     <div class="w-full h-[10.5rem] bg-white">
-        <img class="w-full h-full border-2 border-black" src="{{ imgSrc }}" onerror="this.style.display='none'" alt="">
+        <img class="w-40 h-40 border-2 border-black" src="{{ imgSrc }}" onerror="this.style.display='none'" alt="">
     </div>
     <p class="text-xl mt-1">{{ roles }}</p>
     <div class="flex gap-2 justify-center mt-1">
         <a href="{{ discordLink }}" *ngIf="discordLink != ''"><fa-icon [icon]="faDiscord"></fa-icon></a>
         <a href="{{ twitterLink }}" *ngIf="twitterLink != ''"><fa-icon [icon]="faTwitter"></fa-icon></a>
+        <a href="{{ instagramLink }}" *ngIf="instagramLink != ''"><fa-icon [icon]="faInstagram"></fa-icon></a>
+        <a href="{{ tiktokLink }}" *ngIf="tiktokLink != ''"><fa-icon [icon]="faTiktok"></fa-icon></a>
+        <a href="{{ siteLink }}" *ngIf="siteLink != ''"><fa-icon [icon]="faLink"></fa-icon></a>
     </div>
 </div>
 
