@@ -17,13 +17,13 @@
 
     <div class="">
         <img class="absolute left-[5%] cursor-pointer z-10 no-select" (click)="onClickFirst()" 
-        [ngStyle]="{'top': -10 + firstBulb + '%'}" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowMd">
+        [ngStyle]="{'top': -100 + firstBulb*10 + 'px'}" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowMd">
         <img class="absolute left-1/4 cursor-pointer z-10 no-select" (click)="onClickSecond()" 
-        [ngStyle]="{'top': -20 + secondBulb + '%'}"  src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
+        [ngStyle]="{'top': -300 + secondBulb*10 + 'px'}"  src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
         <img class="absolute cursor-pointer z-10 no-select" (click)="onClickThird()" 
-        [ngStyle]="{'top': -20 + thirdBulb + '%'}" [ngClass]="isBelowLg ? 'right-[25%]' : 'right-[24%]'" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
+        [ngStyle]="{'top': -300 + thirdBulb*10 + 'px'}" [ngClass]="isBelowLg ? 'right-[25%]' : 'right-[24%]'" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
         <img class="absolute right-[5%] cursor-pointer z-10 no-select" (click)="onClickFourth()" 
-        [ngStyle]="{'top': -10 + fourthBulb + '%'}" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowMd">
+        [ngStyle]="{'top': -100 + fourthBulb*10 + 'px'}" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowMd">
     
         <img class="absolute left-[5%] flip-image no-select" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
         <img class="absolute bottom-[-22%] left-1/4 flip-image no-select" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
