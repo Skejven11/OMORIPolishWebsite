@@ -62,4 +62,20 @@ export const routerAnimation =
     ])
   ]);
 
+  export const popAnimation =
+  trigger('popAnimation', [
+      state('closed', style({
+        top: '-100px'
+      })),
+      state('open', style({
+        top: '20px'
+      })),
+      transition('open => closed', [
+        animate('0.25s ease-in-out')
+      ]),
+      transition('closed => open', [
+        animate('0.5s ease-in-out')
+      ])
+  ]);
+
   

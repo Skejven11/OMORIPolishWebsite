@@ -4,10 +4,11 @@
     </div>
     <p class="text-xl mt-1">{{ roles }}</p>
     <div class="flex gap-2 justify-center mt-1">
-        <a href="{{ discordLink }}" *ngIf="discordLink != ''"><fa-icon [icon]="faDiscord"></fa-icon></a>
+        <button *ngIf="discordTag!= ''" (click)="onDiscordClick()"><fa-icon [icon]="faDiscord"></fa-icon></button>
         <a href="{{ twitterLink }}" *ngIf="twitterLink != ''"><fa-icon [icon]="faTwitter"></fa-icon></a>
         <a href="{{ instagramLink }}" *ngIf="instagramLink != ''"><fa-icon [icon]="faInstagram"></fa-icon></a>
         <a href="{{ tiktokLink }}" *ngIf="tiktokLink != ''"><fa-icon [icon]="faTiktok"></fa-icon></a>
+        <a href="{{ youtubeLink }}" *ngIf="youtubeLink != ''"><fa-icon [icon]="faYoutube"></fa-icon></a>
         <a href="{{ siteLink }}" *ngIf="siteLink != ''"><fa-icon [icon]="faLink"></fa-icon></a>
     </div>
 </div>
@@ -15,5 +16,11 @@
 <div class="absolute top-[-1rem] w-full flex justify-center items-center">
     <div class="w-36 h-9 text-2xl bg-black border-white border-2 rounded-sm text-white">
         {{ name }}
+    </div>
+</div>
+
+<div class="fixed bg-white border-black border-2 rounded-sm text-white p-1 w-72 h-14 z-20 text-2xl left-[calc(50%-144px)]" [@popAnimation]="showPopUp ? 'open' : 'closed'">
+    <div class="bg-black h-full flex justify-center items-center">
+        Skopiowano!
     </div>
 </div>
