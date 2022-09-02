@@ -104,5 +104,4 @@ export class MainLayoutComponent implements OnInit {
   hideAd() {
     this.showAd = false;
   }
-
 }
