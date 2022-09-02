@@ -47,7 +47,7 @@ export class TeamItemComponent implements OnInit {
     this.showPopUp = true;
     if (navigator && navigator.clipboard && navigator.clipboard.writeText)
       navigator.clipboard.writeText(this.discordTag);
-    Promise.reject('The Clipboard API is not available.');
+    else Promise.reject('The Clipboard API is not available.');
     setTimeout(() => {
       this.showPopUp = false
     }, 3000)
