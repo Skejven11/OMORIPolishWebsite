@@ -1,6 +1,24 @@
 <div class="w-full h-full flex flex-col items-center">
     <h1 class="text-7xl mb-10 mt-10">Parser Dialogów</h1>
     <div class="border border-black bg-white p-1 w-[50rem] h-[14rem]">
-        <textarea type="text" class="bg-black w-full h-full text-white text-2xl p-4"></textarea>
+        <textarea class="bg-black w-full h-full text-white text-2xl p-4" >{{ scriptText }}</textarea>
+    </div>
+    <omo-button class="mt-6 mb-20" [text]="'Generuj!'" (onButtonClick)="generateText()"></omo-button>
+
+    <div class="w-[50rem] h-full">
+        <div class="flex mb-2">
+            <div class="border border-black bg-white p-1 min-w-[4rem] mr-auto mt-auto">
+                <div class="w-full h-full bg-black text-white text-4xl leading-none p-2 pt-1">
+                </div>
+            </div>
+            <div class="border border-black bg-white p-1 w-[14rem] h-[14rem] ml-auto">
+                <div class="w-full h-full bg-black"></div>
+            </div>
+        </div>
+        <div class="border border-black bg-white p-1 w-full h-[14rem]">
+            <div class="w-full h-full bg-black text-[22px] text-white p-1" #textBox>xddd
+
+            </div>
+        </div>
     </div>
 </div>
