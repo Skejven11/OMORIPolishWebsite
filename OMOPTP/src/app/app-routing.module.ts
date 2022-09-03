@@ -5,6 +5,7 @@ import { FaqComponent } from './screens/faq/faq.component';
 import { FrontpageComponent } from './screens/frontpage/frontpage.component';
 import { MainLayoutComponent } from './screens/main-layout/main-layout.component';
 import { TeamComponent } from './screens/team/team.component';
+import { DialogueParserComponent } from './screens/dialogue-parser/dialogue-parser.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
         data: { animation: 'faqPage'}
       }
     ]
+  },
+  {
+    path: 'parser',
+    component: DialogueParserComponent
   }
 ];
 
