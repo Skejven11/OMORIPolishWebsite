@@ -23,6 +23,7 @@ export class MainLayoutComponent implements OnInit {
   @ViewChild('logo') logo: LogoComponent;
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
+  public isBelowXl: boolean = false;
 
   public popeLine;
   public isPopeAlive: boolean = false;
@@ -51,6 +52,11 @@ export class MainLayoutComponent implements OnInit {
 
     this.screenWidthService.isBelowLg().subscribe((isBelowLg: BreakpointState) => {
       this.isBelowLg = isBelowLg.matches;
+      this.changeDetector.detectChanges();
+    })
+
+    this.screenWidthService.isBelowXl().subscribe((isBelowXl: BreakpointState) => {
+      this.isBelowXl = isBelowXl.matches;
       this.changeDetector.detectChanges();
     })
 

@@ -25,10 +25,10 @@
         <img class="absolute right-[5%] cursor-pointer z-10 no-select" (click)="onClickFourth()" 
         [ngStyle]="{'top': -100 + fourthBulb*10 + 'px'}" src="../../../assets/img/bulbLarge.gif" alt=""  *ngIf="!isBelowMd">
     
-        <img class="absolute left-[5%] flip-image no-select" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
-        <img class="absolute bottom-[-22%] left-1/4 flip-image no-select" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
-        <img class="absolute bottom-[-22%] right-1/4 no-select" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowLg">
-        <img class="absolute right-[5%] no-select" [ngClass]="isBelowLg ? 'bottom-[-22%]' : 'bottom-[-12%]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
+        <img class="absolute left-[5%] flip-image no-select" [ngClass]="isBelowLg ? 'bottom-[-325px]' : 'bottom-[-200px]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
+        <img class="absolute bottom-[-325px] left-[20%] flip-image no-select" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowXl">
+        <img class="absolute bottom-[-325px] right-[20%] no-select" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowXl">
+        <img class="absolute right-[5%] no-select" [ngClass]="isBelowLg ? 'bottom-[-325px]' : 'bottom-[-200px]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
     </div>
 
     <div class="fixed border-2 bottom-[-2px] border-black flex flex-col szlam z-10 bg-white" 
