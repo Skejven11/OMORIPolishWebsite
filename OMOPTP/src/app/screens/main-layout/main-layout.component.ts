@@ -1,9 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
+import { ScreenHeightService } from 'src/app/common/screen-height.service';
 import { BreakpointState } from "@angular/cdk/layout"
 import { routerAnimation, contentAnimation, logoAnimation, adAnimation } from 'src/app/common/animations';
 import { ChildrenOutletContexts } from '@angular/router';
-import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import { LogoComponent } from './logo/logo.component';
 
 @Component({
@@ -24,6 +24,7 @@ export class MainLayoutComponent implements OnInit {
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
   public isBelowXl: boolean = false;
+  public isAboveFHD: boolean = false;
 
   public popeLine;
   public isPopeAlive: boolean = false;
@@ -40,6 +41,7 @@ export class MainLayoutComponent implements OnInit {
 
   constructor(
     private screenWidthService: ScreenWidthService,
+    private screenHeightService: ScreenHeightService,
     private changeDetector: ChangeDetectorRef,
     private contexts: ChildrenOutletContexts
   ) { }
@@ -57,6 +59,11 @@ export class MainLayoutComponent implements OnInit {
 
     this.screenWidthService.isBelowXl().subscribe((isBelowXl: BreakpointState) => {
       this.isBelowXl = isBelowXl.matches;
+      this.changeDetector.detectChanges();
+    })
+
+    this.screenHeightService.isAboveFHD().subscribe((isAboveFHD: BreakpointState) => {
+      this.isAboveFHD = isAboveFHD.matches;
       this.changeDetector.detectChanges();
     })
 
