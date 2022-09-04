@@ -23,6 +23,10 @@ html, body, app-root {
     @apply w-full h-full m-0;
 }
 
+app-root, app-main-layout {
+    @apply inline-block w-full h-full;
+}
+
 div[ng-view] {
     @apply w-full;
 }
