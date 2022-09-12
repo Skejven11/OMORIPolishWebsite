@@ -1,6 +1,6 @@
 # Omori po polsku
 
- Website created for the Polish translation project of [OMORI](https://www.omori-game.com/en) game. Fully frontend app which uses Typescript, Angular 13 and Tailwind.
+ Website created for the Polish translation project of [OMORI](https://store.steampowered.com/app/1150690/OMORI/) game. Fully frontend app which uses Typescript, Angular 13 and Tailwind.
  Deployed [here](https://skejven11.github.io/OMORIPolishWebsite).
 
 ### Repository consists of: 
