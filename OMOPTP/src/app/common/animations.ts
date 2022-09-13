@@ -78,4 +78,20 @@ export const routerAnimation =
       ])
   ]);
 
+  export const scrollAnimation =
+  trigger('scrollAnimation', [
+    state('closed', style({
+      left: '-100px'
+    })),
+    state('open', style({
+      left: '6px'
+    })),
+    transition('open => closed', [
+      animate('0.25s ease-in-out')
+    ]),
+    transition('closed => open', [
+      animate('0.5s ease-in-out')
+    ])
+  ]);
+
   

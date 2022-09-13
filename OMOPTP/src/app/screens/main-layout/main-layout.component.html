@@ -40,4 +40,10 @@
             <p class="text-[2.5rem] leading-[1.5rem]">GORĄCE SZLAMICE W TWOJEJ OKOLICY! <a href="https://www.youtube.com/watch?v=7xl5kRE19y4" class="underline rainbow-text bg-transparent">ZOBACZ ZDJĘCIA!!!</a></p>
         </div>
     </div>
+
+    <div class="fixed w-14 h-20 border-2 border-black p-1 z-20 left-[6px] bottom-44 bg-white" [@scrollAnimation]="scrolledPast ? 'open' : 'closed'">
+        <div class="w-full h-full bg-black cursor-pointer flex justify-center items-center" (click)="scrollToTop()">
+            <img src="../../../assets/img/red-hand-rotated.png" class="w-10 h-14">
+        </div>
+    </div>
 </div>

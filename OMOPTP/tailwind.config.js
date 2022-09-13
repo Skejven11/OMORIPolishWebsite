@@ -9,13 +9,18 @@ module.exports = {
     },
     extend: {
       keyframes: {
-        move: {
+        moveLeftRight: {
           '0%': { transform: 'translatex(0px)' },
           '50%': { transform: 'translatex(3px)' },
+        },
+        moveUpDown: {
+          '0%': { transform: 'translatey(0px)' },
+          '50%': { transform: 'translatey(-6px)' },
         }
       },
       animation: {
-        'left-right': 'move 2s infinite ease-in-out'
+        'left-right': 'moveLeftRight 2s infinite',
+        'up-down' : 'moveUpDown 2s infinite'
       },
     },
   },

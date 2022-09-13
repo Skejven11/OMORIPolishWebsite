@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { ScreenHeightService } from 'src/app/common/screen-height.service';
 import { BreakpointState } from "@angular/cdk/layout"
-import { routerAnimation, contentAnimation, logoAnimation, adAnimation } from 'src/app/common/animations';
+import { routerAnimation, contentAnimation, logoAnimation, adAnimation, scrollAnimation } from 'src/app/common/animations';
 import { ChildrenOutletContexts } from '@angular/router';
 import { LogoComponent } from './logo/logo.component';
 
@@ -16,7 +16,8 @@ import { LogoComponent } from './logo/logo.component';
     routerAnimation,
     contentAnimation,
     logoAnimation,
-    adAnimation
+    adAnimation,
+    scrollAnimation
   ]
 })
 export class MainLayoutComponent implements OnInit {
@@ -38,6 +39,14 @@ export class MainLayoutComponent implements OnInit {
   public popeNumber: number = 0;
 
   public isReloading: boolean = (window.performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming).type === "reload";
+
+  public scrolledPast: boolean = false;
+  @HostListener('window:scroll', ['$event']) onScroll(e: Event) {
+    if (window.scrollY > 200) {
+      this.scrolledPast = true;
+    }
+    else this.scrolledPast = false;
+  }
 
   constructor(
     private screenWidthService: ScreenWidthService,
@@ -116,5 +125,13 @@ export class MainLayoutComponent implements OnInit {
 
   hideAd() {
     this.showAd = false;
+  }
+
+  scrollToTop(): void {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
   }
 }
