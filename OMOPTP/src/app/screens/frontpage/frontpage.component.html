@@ -1,22 +1,41 @@
 
 <div>
-    <h1 class="text-center" [ngClass]="isBelowMd ? 'text-4xl mb-10 leading-8' : 'text-[3.25rem] mb-16 leading-10'">
+    <h1 class="text-center mb-16" [ngClass]="isBelowMd ? 'text-4xl leading-8' : 'text-[3.25rem] leading-10'">
         <b>Witajcie na stronie fanowskiego spolszczenia OMORI!</b>
     </h1>
-    <p class="mb-3" [ngClass]="isBelowMd ? 'text-xl' : 'text-2xl'">
-        Jesteśmy grupką osób, które zebrały się razem, aby stworzyć dla Was spolszczenie gry OMORI! Chcemy, żeby jak najwięcej osób mogło poznać historię 
-        barwnej grupki przyjaciół, a znajomość języka angielskiego nie była tutaj przeszkodą. Tłumaczenie to nie łatwa rzecz, pracujemy w wolnym czasie i za darmo, 
-        dlatego bądźcie z nami cierpliwi!
-        Zaczęliśmy pracę w sierpniu 2022 roku, nie mamy jeszcze ściśle ustalonej daty premiery tłumaczenia, ale postaram się aktualizować stronę co jakiś czas
-        z wiadomościami o stanie prac. 
-        <br><br>
-        Jeżeli macie jakieś pytania, kierujcie się do <a [routerLink]="'/faq'" class="text-red-500">często zadawanych pytań</a>.
-        Nasz serwer na Discordzie jeszcze nie jest publicznie otwarty, ale w przyszłości ma się to zmienić!
-        <!--a gdy owe odpowiedzi nie zaspokoiły waszej żądzy wiedzy, zachęcamy do dołączenia do naszego serwera na Discordzie, do którego link znajduje się 
-        <a href="" class="text-red-500">tu</a> lub poniżej....-->
-        <br>
-    </p>
-    <p class="mb-2">PS kliknij w królika.</p>
-    <p>- Skejven</p>
-    <hr>
+    <div class="border-2 border-white p-10 mb-16">
+        <p [ngClass]="isBelowMd ? 'text-xl' : 'text-2xl'">
+            Jesteśmy grupką osób, które zebrały się razem, aby stworzyć dla Was spolszczenie gry OMORI! Chcemy, żeby jak najwięcej osób mogło poznać historię 
+            barwnej grupki przyjaciół, a znajomość języka angielskiego nie była tutaj przeszkodą. Tłumaczenie to nie łatwa rzecz, pracujemy w wolnym czasie i za darmo, 
+            dlatego bądźcie z nami cierpliwi!
+            Zaczęliśmy pracę w sierpniu 2022 roku, nie mamy jeszcze ściśle ustalonej daty premiery tłumaczenia, ale postaram się aktualizować stronę co jakiś czas
+            z wiadomościami o stanie prac. 
+            <br><br>
+            Jeżeli macie jakieś pytania, kierujcie się do <a [routerLink]="'/faq'" class="text-red-500">często zadawanych pytań</a>.
+            A gdy owe odpowiedzi nie zaspokoiły waszej żądzy wiedzy, zachęcamy do dołączenia do naszego serwera na Discordzie, do którego link znajduje się 
+            <a href="https://discord.gg/8JTc36HNyM" class="text-red-500">tu</a> lub poniżej.
+            <br>
+        </p>
+    </div>
+    <!--<p class="mb-2">PS kliknij w królika.</p>-->
+    <hr class="mb-16">
+    <div class="flex mb-3">
+        <div class="h-12 border-2 border-white text-center text-3xl p-1 px-4">
+            21.09.2022
+        </div>
+        <div class="h-12 border-2 border-white text-center text-3xl p-1 px-4 ml-auto">
+            Skejven
+        </div>
+    </div>
+    <div class="w-full border-2 border-white p-2" [ngClass]="isBelowMd ? 'text-xl' : 'text-2xl'">
+        Hej!
+        <br class="mb-2">
+        Przyszedł czas na pierwszą aktualizację :) Pierwsze i najważniejsze, nasz serwer na Discordzie jest już otwarty dla wszystkich! Dołączyć można poprzez kliknięcie
+        ikonki poniżej. Pamiętajcie o przestrzeganiu regulaminu i zachowywaniu się odpowiednio! 
+        <br class="mb-2">
+        Teraz czas na małe podsumowanie prac. Jeżeli chodzi o ilość przetłumaczonych dialogów i cutscenek, jesteśmy na około 15%. Idzie nam to szybko, ale pamiętajcie, że ten
+        procent wcale nie jest równy stoponiowi ukończenia tłumaczenia. W to wchodzi bardzo wiele różnych czynników. Nasi graficy pracują, aby język polski zawitał również 
+        na kolorowych obrazkach widocznych w samej grze, nie tylko w tekście. Technicy (ja i Piotruś) ogarniają kod gry, tak, żeby sporo tekstu, minigierek i innych czynności
+        w grze pasowało do naszego języka. To tyle na razie!
+    </div>
 </div>
