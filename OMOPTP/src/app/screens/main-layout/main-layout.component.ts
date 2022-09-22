@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { ScreenHeightService } from 'src/app/common/screen-height.service';
 import { BreakpointState } from "@angular/cdk/layout"
@@ -7,7 +7,7 @@ import { ChildrenOutletContexts } from '@angular/router';
 import { LogoComponent } from './logo/logo.component';
 
 @Component({
-  selector: 'app-main-layout',
+  selector: 'main-layout',
   templateUrl: './main-layout.component.html',
   styles: [
     ':host { position: relative }'
