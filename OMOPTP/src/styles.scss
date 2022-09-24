@@ -18,13 +18,9 @@
     src: url("/assets/font/Omori_game3-Regular.ttf");
 }
 
-html, body, app-root {
+html, body {
     font-family: 'OMORI';
-    @apply w-full h-full m-0;
-}
-
-app-root, app-main-layout {
-    @apply inline-block w-full h-full;
+    @apply w-full h-full m-0 block;
 }
 
 div[ng-view] {

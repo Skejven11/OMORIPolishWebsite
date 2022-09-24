@@ -84,7 +84,7 @@ export const routerAnimation =
       left: '-100px'
     })),
     state('open', style({
-      left: '6px'
+      left: '1px'
     })),
     transition('open => closed', [
       animate('0.25s ease-in-out')

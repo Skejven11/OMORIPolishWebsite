@@ -19,7 +19,7 @@ module.exports = {
         }
       },
       animation: {
-        'left-right': 'moveLeftRight 2s infinite',
+        'left-right': 'moveLeftRight 1s infinite linear',
         'up-down' : 'moveUpDown 2s infinite'
       },
     },

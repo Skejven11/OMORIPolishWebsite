@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center w-full overflow-hidden relative background" [ngClass]="isAboveFHD ? 'h-full' : ''">
+<div class="flex justify-center items-center w-full overflow-hidden relative background">
     <div class="flex flex-col justify-center items-center"
     [ngClass]="isBelowLg && isBelowMd ? 'w-full mt-4' : isBelowLg ? 'w-3/4 mt-12' : 'w-3/5 mt-12'">
         <logo #logo class="relative" [@logoAnimation]="isReloading ? false : true" [ngClass]="isBelowMd ? 'mb-4' : 'mb-14'"></logo>
@@ -7,7 +7,7 @@
             <navbar class="w-full absolute top-1 z-[2]"></navbar>
             <div class="border-2 border-black w-full p-1">
                 <div class="bg-black h-full text-white overflow-y-scroll text-lg relative scrollbar-hidden scroll-bottom min-h-[50rem]" [@routerAnimation]="getRouteAnimationData()"
-                [ngClass]="isBelowLg && isBelowMd ? 'px-10 pt-14 pb-8' : isBelowLg ? 'px-16 pt-20 pb-10' : 'px-24 pt-24 pb-12'">
+                [ngClass]="isBelowLg && isBelowMd ? 'px-8 pt-14 pb-8' : isBelowLg ? 'px-12 pt-20 pb-10' : 'px-20 pt-24 pb-12'">
                     <router-outlet></router-outlet>
                 </div>
             </div>
