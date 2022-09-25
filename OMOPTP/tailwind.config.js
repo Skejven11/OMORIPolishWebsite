@@ -11,7 +11,7 @@ module.exports = {
       keyframes: {
         moveLeftRight: {
           '0%': { transform: 'translatex(0px)' },
-          '50%': { transform: 'translatex(6px)' },
+          '50%': { transform: 'translatex(3px)' },
         },
         moveUpDown: {
           '0%': { transform: 'translatey(0px)' },
