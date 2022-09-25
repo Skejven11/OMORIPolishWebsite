@@ -17,6 +17,8 @@ import { MenuItemComponent } from './screens/main-layout/navbar/menu-item/menu-i
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TeamItemComponent } from './screens/team/team-item/team-item.component';
 import { CanvastarComponent } from './components/canvastar/canvastar.component';
+import { NewsComponent } from './screens/news/news.component';
+import { NewsarticleComponent } from './components/newsarticle/newsarticle.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { CanvastarComponent } from './components/canvastar/canvastar.component';
     OmoButtonComponent,
     MenuItemComponent,
     TeamItemComponent,
-    CanvastarComponent
+    CanvastarComponent,
+    NewsComponent,
+    NewsarticleComponent
   ],
   imports: [
     BrowserModule,

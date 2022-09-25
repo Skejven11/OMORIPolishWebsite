@@ -1,6 +1,8 @@
 import { BreakpointState } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
+import { NewsArticle } from 'src/app/components/newsarticle/newsarticle.component';
+import { lastArticle } from '../news/articles-provider';
 
 @Component({
   selector: 'frontpage',
@@ -8,16 +10,15 @@ import { ScreenWidthService } from 'src/app/common/screen-width.service';
 })
 export class FrontpageComponent implements OnInit {
   public isBelowMd: boolean = false;
+  public latestArticle: NewsArticle = lastArticle;
 
   constructor(
     private screenWidthService: ScreenWidthService,
-    private changeDetector: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
     this.screenWidthService.isBelowMd().subscribe((isBelowMd: BreakpointState) => {
       this.isBelowMd = isBelowMd.matches;
-      this.changeDetector.detectChanges();
     })
   }
 

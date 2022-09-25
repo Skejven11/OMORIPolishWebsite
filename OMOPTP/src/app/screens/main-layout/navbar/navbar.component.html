@@ -25,6 +25,7 @@
     </button>
     <div class="border-4 border-white w-64 bg-black text-white flex flex-col" *ngIf="displayMenu" [@popMenu]>
         <menu-item [text]="'GŁÓWNA'" [link]="''" (click)="toggleMenu()"></menu-item>
+        <menu-item [text]="'AKTUALNOŚCI'" [link]="'/news'" (click)="toggleMenu()"></menu-item>
         <menu-item [text]="'POBIERZ'" [link]="'/download'" (click)="toggleMenu()"></menu-item>
         <menu-item [text]="'ZESPÓŁ'" [link]="'/team'" (click)="toggleMenu()"></menu-item>
         <menu-item [text]="'FAQ'" [link]="'/faq'" (click)="toggleMenu()" class="mb-2"></menu-item>

@@ -1,0 +1,11 @@
+<div class="flex mb-3">
+    <div class="h-12 border-2 border-white text-center text-3xl p-1 px-4">
+        {{article.date}}
+    </div>
+    <div class="h-12 border-2 border-white text-center text-3xl p-1 px-4 ml-auto">
+        {{article.author}}
+    </div>
+</div>
+<div class="w-full border-2 border-white p-4" [ngClass]="isBelowMd ? 'text-xl' : 'text-2xl'">
+    {{article.text}}
+</div>
