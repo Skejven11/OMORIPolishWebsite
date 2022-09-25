@@ -7,5 +7,12 @@
     </div>
 </div>
 <div class="w-full border-2 border-white p-4" [ngClass]="isBelowMd ? 'text-xl' : 'text-2xl'">
-    {{article.text}}
+    <span [innerHTML]="article.text"></span>
+    <div class="flex flex-wrap mt-10 justify-center gap-x-6">
+        <div *ngFor="let photo of article.photos" class="flex justify-center">
+            <div class="border-2 border-white p-2 cursor-pointer hover:border-red-600 duration-500">
+                <img width="250px" src="../../../assets/img/screens/{{photo}}">
+            </div>
+        </div>
+    </div>
 </div>

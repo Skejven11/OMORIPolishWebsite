@@ -2,7 +2,7 @@ import { BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { NewsArticle } from 'src/app/components/newsarticle/newsarticle.component';
-import { lastArticle } from '../news/articles-provider';
+import { articles } from '../news/articles-provider';
 
 @Component({
   selector: 'frontpage',
@@ -10,7 +10,7 @@ import { lastArticle } from '../news/articles-provider';
 })
 export class FrontpageComponent implements OnInit {
   public isBelowMd: boolean = false;
-  public latestArticle: NewsArticle = lastArticle;
+  public latestArticle: NewsArticle = articles[0];
 
   constructor(
     private screenWidthService: ScreenWidthService,

@@ -28,4 +28,5 @@ export type NewsArticle = {
   date: string,
   author: string,
   text: string,
+  photos?: string[]
 }
