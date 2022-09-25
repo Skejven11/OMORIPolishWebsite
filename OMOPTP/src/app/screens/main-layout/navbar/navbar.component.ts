@@ -51,14 +51,17 @@ export class NavbarComponent implements OnInit {
       case '/frontpage':
         this.activatedRoute[0] = true;
         break;
-      case '/download':
+      case '/news':
         this.activatedRoute[1] = true;
         break;
-      case '/team':
+      case '/download':
         this.activatedRoute[2] = true;
         break;
-      case '/faq':
+      case '/team':
         this.activatedRoute[3] = true;
+        break;
+      case '/faq':
+        this.activatedRoute[4] = true;
         break;
     } 
   }
