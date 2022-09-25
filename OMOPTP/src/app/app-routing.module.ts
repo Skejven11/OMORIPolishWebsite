@@ -5,6 +5,7 @@ import { FaqComponent } from './screens/faq/faq.component';
 import { FrontpageComponent } from './screens/frontpage/frontpage.component';
 import { MainLayoutComponent } from './screens/main-layout/main-layout.component';
 import { TeamComponent } from './screens/team/team.component';
+import { NewsComponent } from './screens/news/news.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,11 @@ const routes: Routes = [
         path: 'faq',
         component: FaqComponent,
         data: { animation: 'faqPage'}
+      },
+      {
+        path: 'news',
+        component: NewsComponent,
+        data: { animation: 'newsPage'}
       }
     ]
   }

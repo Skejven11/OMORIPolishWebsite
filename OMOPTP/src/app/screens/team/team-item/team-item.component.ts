@@ -28,10 +28,7 @@ export class TeamItemComponent implements OnInit {
 
   public showPopUp: boolean = false;
 
-  constructor(
-    private changeDetector: ChangeDetectorRef,
-  ) {
-   }
+  constructor() {}
 
   ngOnInit(): void {
     this.imgSrc = this.imgSrc != "" ? "../../../../assets/img/portraits/" + this.imgSrc : "";
@@ -39,7 +36,6 @@ export class TeamItemComponent implements OnInit {
     this.instagramLink = this.instagramLink != "" ? "https://instagram.com/" + this.instagramLink : "";
     this.tiktokLink = this.tiktokLink != "" ? "https://tiktok.com/@" + this.tiktokLink : "";
     this.youtubeLink = this.youtubeLink != "" ? "https://www.youtube.com/channel/" + this.youtubeLink : "";
-    this.changeDetector.detectChanges();
   }
 
   onDiscordClick() {

@@ -1,0 +1,22 @@
+<div class="flex mb-3">
+    <div class="h-12 border-2 border-white text-center text-3xl p-1 px-4">
+        {{article.date}}
+    </div>
+    <div class="h-12 border-2 border-white text-center text-3xl p-1 px-4 ml-auto">
+        {{article.author}}
+    </div>
+</div>
+<div class="w-full border-2 border-white p-4" [ngClass]="isBelowMd ? 'text-xl' : 'text-2xl'">
+    <span [innerHTML]="article.text"></span>
+    <div class="flex flex-wrap mt-10 justify-center gap-6">
+        <div *ngFor="let photo of article.photos" class="flex justify-center">
+            <div class="border-2 border-white p-2 cursor-pointer hover:border-red-600 duration-500" (click)="onPhotoClick(photo)">
+                <img width="250px" src="../../../assets/img/screens/{{photo}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed w-full h-full bg-black modal-window top-0 left-0 z-30 flex justify-center items-center" *ngIf="showPhoto" #modalWindow>
+    <img [ngClass]="isBelowMd ? 'w-full' : 'w-1/2'" class="opacity-100 z-40" src="../../../assets/img/screens/{{photoSrc}}" #modalPhoto>
+</div>
