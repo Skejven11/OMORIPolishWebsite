@@ -19,6 +19,8 @@ export var articles: NewsArticle[] = [
             To tyle na razie!`,
         photos: [
             '1.1.jpg',
+            '1.2.png',
+            '1.3.png'
         ]
     },
 ] 

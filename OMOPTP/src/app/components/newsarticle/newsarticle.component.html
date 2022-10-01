@@ -18,5 +18,7 @@
 </div>
 
 <div class="fixed w-full h-full bg-black modal-window top-0 left-0 z-30 flex justify-center items-center" *ngIf="showPhoto" #modalWindow>
-    <img [ngClass]="isBelowMd ? 'w-full' : 'w-1/2'" class="opacity-100 z-40" src="../../../assets/img/screens/{{photoSrc}}" #modalPhoto>
+    <div class="border-white border-4 p-4" [ngClass]="isBelowMd ? 'w-full' : 'w-1/2'">
+        <img class="opacity-100 z-40" src="../../../assets/img/screens/{{photoSrc}}" #modalPhoto>
+    </div>
 </div>
