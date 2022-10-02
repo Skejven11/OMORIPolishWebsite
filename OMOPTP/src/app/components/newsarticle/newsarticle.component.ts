@@ -11,6 +11,8 @@ export class NewsarticleComponent implements OnInit {
   @Input() public article: NewsArticle;
   @ViewChild('modalWindow') modalWindow: ElementRef;
   @ViewChild('modalPhoto') modalPhoto: ElementRef;
+  @ViewChild('next') nextButton: ElementRef;
+  @ViewChild('previous') previousButton: ElementRef;
   public showPhoto: boolean = false;
   public photoSrc: string = "";
 
@@ -28,14 +30,26 @@ export class NewsarticleComponent implements OnInit {
     })
   }
 
-  onPhotoClick(photoSrc: string):void { 
+  onPhotoClick(photos: string[], index: number):void { 
     this.showPhoto = true;
-    this.photoSrc = photoSrc;
+    this.photoSrc = photos[index];
     this.changeDetector.detectChanges();
     var modalWindow = this.modalWindow.nativeElement;
     var modalPhoto = this.modalPhoto.nativeElement;
+    var nextButton = this.nextButton.nativeElement;
+    var previousButton = this.previousButton.nativeElement;
     var listener = this.renderer.listen(modalWindow, 'click', (e: Event) => {
-      if (e.target != modalPhoto) {
+      if (e.target === nextButton) {
+        if (index + 1 > photos.length - 1) index = 0;
+        else index++;
+        this.photoSrc = photos[index]
+      }
+      else if (e.target === previousButton) {
+        if (index - 1 < 0) index = photos.length - 1;
+        else index--;
+        this.photoSrc = photos[index]
+      }
+      else if (e.target != modalPhoto) {
         this.showPhoto = false;
         listener();
       }
