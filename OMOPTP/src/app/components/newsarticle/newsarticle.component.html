@@ -9,16 +9,20 @@
 <div class="w-full border-2 border-white p-4" [ngClass]="isBelowMd ? 'text-xl' : 'text-2xl'">
     <span [innerHTML]="article.text"></span>
     <div class="flex flex-wrap mt-10 justify-center gap-6">
-        <div *ngFor="let photo of article.photos" class="flex justify-center">
-            <div class="border-2 border-white p-2 cursor-pointer hover:border-red-600 duration-500" (click)="onPhotoClick(photo)">
+        <div *ngFor="let photo of article.photos; index as i" class="flex justify-center">
+            <div class="border-2 border-white p-2 cursor-pointer hover:border-red-600 duration-500" (click)="onPhotoClick(article.photos, i)">
                 <img width="250px" src="../../../assets/img/screens/{{photo}}">
             </div>
         </div>
     </div>
 </div>
 
-<div class="fixed w-full h-full bg-black modal-window top-0 left-0 z-30 flex justify-center items-center" *ngIf="showPhoto" #modalWindow>
-    <div class="border-white border-4 p-4" [ngClass]="isBelowMd ? 'w-full' : 'w-1/2'">
-        <img class="opacity-100 z-40" src="../../../assets/img/screens/{{photoSrc}}" #modalPhoto>
+<div class="fixed w-full h-full bg-black modal-window top-0 left-0 z-30 flex items-center" *ngIf="showPhoto" #modalWindow>
+    <div class="w-full flex justify-center items-center">
+        <img src="../../../assets/img/red-hand-flipped.png" #previous class="w-12 h-8 absolute left-4 cursor-pointer" alt="">
+        <div class="border-white border-4 p-4" [ngClass]="isBelowMd ? 'w-full' : 'w-1/2'">
+            <img class="opacity-100 z-40" src="../../../assets/img/screens/{{photoSrc}}" #modalPhoto>
+        </div>
+        <img src="../../../assets/img/red-hand.png" #next class="w-12 h-8 absolute right-4 cursor-pointer" alt="">
     </div>
 </div>
