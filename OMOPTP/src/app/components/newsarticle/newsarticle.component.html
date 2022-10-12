@@ -21,7 +21,7 @@
     <div class="w-full flex justify-center items-center">
         <img src="../../../assets/img/red-hand-flipped.png" #previous class="w-12 h-8 absolute left-4 cursor-pointer" alt="">
         <div class="border-white border-4 p-4" [ngClass]="isBelowMd ? 'w-full' : 'w-1/2'">
-            <img class="opacity-100 z-40" src="../../../assets/img/screens/{{photoSrc}}" #modalPhoto>
+            <img class="opacity-100 z-40 max-h-full max-w-full" src="../../../assets/img/screens/{{photoSrc}}" #modalPhoto>
         </div>
         <img src="../../../assets/img/red-hand.png" #next class="w-12 h-8 absolute right-4 cursor-pointer" alt="">
     </div>
