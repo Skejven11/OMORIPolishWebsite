@@ -1,9 +1,11 @@
-<div class="p-2">
-    <div class="w-full h-[10.5rem] bg-white">
+<div class="p-2 flex flex-col h-full">
+    <div class="w-full bg-white">
         <img class="w-40 h-40 border-2 border-black" src="{{ imgSrc }}" onerror="this.style.display='none'" alt="">
     </div>
-    <p class="text-xl mt-1">{{ roles }}</p>
-    <div class="flex gap-2 justify-center mt-1">
+    <div class="mt-1 flex-1 flex items-center justify-center">
+        <p class="text-xl">{{ roles }}</p>
+    </div>
+    <div class="flex gap-2 justify-center">
         <button *ngIf="discordTag!= ''" (click)="onDiscordClick()"><fa-icon [icon]="faDiscord"></fa-icon></button>
         <a href="{{ twitterLink }}" *ngIf="twitterLink != ''"><fa-icon [icon]="faTwitter"></fa-icon></a>
         <a href="{{ instagramLink }}" *ngIf="instagramLink != ''"><fa-icon [icon]="faInstagram"></fa-icon></a>
