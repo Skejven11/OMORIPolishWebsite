@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit {
   detectRoute(route: string): void {
     this.activatedRoute = [false, false, false, false]
     switch(route) {
-      case '/frontpage':
+      case '/':
         this.activatedRoute[0] = true;
         break;
       case '/news':

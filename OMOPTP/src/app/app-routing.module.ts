@@ -14,11 +14,6 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/frontpage',
-        pathMatch: 'full'
-      },
-      {
-        path: 'frontpage',
         component: FrontpageComponent,
         data: { animation: 'frontPage' }
       },

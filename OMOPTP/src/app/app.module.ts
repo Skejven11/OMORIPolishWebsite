@@ -19,6 +19,7 @@ import { TeamItemComponent } from './screens/team/team-item/team-item.component'
 import { CanvastarComponent } from './components/canvastar/canvastar.component';
 import { NewsComponent } from './screens/news/news.component';
 import { NewsarticleComponent } from './components/newsarticle/newsarticle.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { NewsarticleComponent } from './components/newsarticle/newsarticle.compo
     BrowserAnimationsModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
