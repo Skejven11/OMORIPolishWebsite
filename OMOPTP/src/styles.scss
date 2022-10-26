@@ -97,11 +97,18 @@ div[ng-view] {
     -webkit-tap-highlight-color: transparent;
 }
 
-.szlam {
-    background-image: url("/assets/img/szlamice.gif");
+.ad-image {
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center center; 
+}
+
+.szlam {
+    background-image: url("/assets/img/szlamice.gif");
+}
+
+.shark {
+    background-image: url("/assets/img/shark.gif");
 }
 
 li {

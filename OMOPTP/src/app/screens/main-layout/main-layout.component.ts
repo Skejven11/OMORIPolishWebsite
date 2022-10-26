@@ -31,6 +31,8 @@ export class MainLayoutComponent implements OnInit {
   public isPopeAlive: boolean = false;
 
   public showAd: boolean = true;
+  public isSharkAd: boolean = false;
+  public adText: string = "GORĄCE SZLAMICE W TWOJEJ OKOLICY!";
 
   public firstBulb: number = 0;
   public secondBulb: number = 0;
@@ -78,6 +80,14 @@ export class MainLayoutComponent implements OnInit {
 
     this.popeLine = new Audio();
     this.popeLine.src = "../../../assets/sounds/pope.mp4";
+
+    let randomAdNumber = Math.floor(Math.random() * (3-1) + 1);
+    console.log(randomAdNumber);
+
+    if (randomAdNumber === 1) {
+      this.isSharkAd = true;
+      this.adText = 'GORĄCE REKINY W GARNITURACH W TWOJEJ OKOLICY'
+    }
   }
 
   getRouteAnimationData() {
