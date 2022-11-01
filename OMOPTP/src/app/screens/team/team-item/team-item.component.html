@@ -1,6 +1,6 @@
-<div class="p-2 flex flex-col h-full">
+<div class="p-2 flex flex-col h-full" (mouseenter)="changePortrait()" (mouseleave)="changePortraitBack()">
     <div class="w-full bg-white">
-        <img class="w-40 h-40 border-2 border-black" src="{{ imgSrc }}" onerror="this.style.display='none'" alt="">
+        <img #portrait class="w-40 h-40 border-2 border-black" src="{{ imgSrc }}" onerror="this.style.display='none'" alt="">
     </div>
     <div class="mt-1 flex-1 flex items-center justify-center">
         <p class="text-xl">{{ roles }}</p>
