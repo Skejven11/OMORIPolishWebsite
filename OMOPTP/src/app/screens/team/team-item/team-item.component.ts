@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { faDiscord, faTwitter, faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { popAnimation } from 'src/app/common/animations';
@@ -10,6 +10,7 @@ import { popAnimation } from 'src/app/common/animations';
   animations: [ popAnimation ]
 })
 export class TeamItemComponent implements OnInit {
+  @ViewChild('portrait') portraitElement: ElementRef;
   @Input() name: string = "";
   @Input() roles: string = "";
   @Input() twitterLink: string = "";
@@ -19,6 +20,7 @@ export class TeamItemComponent implements OnInit {
   @Input() youtubeLink: string = "";
   @Input() siteLink: string = "";
   @Input() imgSrc: string = "";
+  @Input() altPortrait: string = "";
   public faDiscord = faDiscord;
   public faTwitter = faTwitter;
   public faInstagram = faInstagram;
@@ -47,5 +49,13 @@ export class TeamItemComponent implements OnInit {
     setTimeout(() => {
       this.showPopUp = false
     }, 3000)
+  }
+
+  changePortrait(): void {
+    if (this.altPortrait && Math.floor(Math.random() * 8 + 1) === 8) this.portraitElement.nativeElement.src = "../../../../assets/img/portraits/" + this.altPortrait;
+  }
+
+  changePortraitBack(): void {
+    this.portraitElement.nativeElement.src = "../../../../assets/img/portraits/" + this.imgSrc;
   }
 }
