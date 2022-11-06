@@ -10,7 +10,7 @@ import { LogoComponent } from './logo/logo.component';
   selector: 'main-layout',
   templateUrl: './main-layout.component.html',
   styles: [
-    ':host { position: relative }'
+    ':host { position: relative; }'
   ],
   animations: [
     routerAnimation,
@@ -25,7 +25,7 @@ export class MainLayoutComponent implements OnInit {
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
   public isBelowXl: boolean = false;
-  public isAboveFHD: boolean = false;
+  public isBelowUHD: boolean = false;
 
   public popeLine;
   public isPopeAlive: boolean = false;
@@ -73,8 +73,8 @@ export class MainLayoutComponent implements OnInit {
       this.changeDetector.detectChanges();
     })
 
-    this.screenHeightService.isAboveFHD().subscribe((isAboveFHD: BreakpointState) => {
-      this.isAboveFHD = isAboveFHD.matches;
+    this.screenHeightService.isBelowUHD().subscribe((isBelowUHD: BreakpointState) => {
+      this.isBelowUHD = isBelowUHD.matches;
       this.changeDetector.detectChanges();
     })
 
@@ -82,7 +82,6 @@ export class MainLayoutComponent implements OnInit {
     this.popeLine.src = "../../../assets/sounds/pope.mp4";
 
     let randomAdNumber = Math.floor(Math.random() * (3-1) + 1);
-    console.log(randomAdNumber);
 
     if (randomAdNumber === 1) {
       this.isSharkAd = true;
