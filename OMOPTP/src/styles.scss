@@ -60,7 +60,21 @@ div[ng-view] {
 }
 
 .background {
-    background-image: white;
+    background-color: white;
+}
+
+.scary-modal-background {
+    background-image: url('/assets/img/creepy_bg.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.scary-background {
+    background-image: url('/assets/img/blackspace_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .text-shadow {

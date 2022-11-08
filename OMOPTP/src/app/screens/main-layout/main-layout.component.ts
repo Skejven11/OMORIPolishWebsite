@@ -5,6 +5,8 @@ import { BreakpointState } from "@angular/cdk/layout"
 import { routerAnimation, contentAnimation, logoAnimation, adAnimation, scrollAnimation } from 'src/app/common/animations';
 import { ChildrenOutletContexts } from '@angular/router';
 import { LogoComponent } from './logo/logo.component';
+import { ScaryEasterEggObj } from 'src/app/common/types';
+import { wait } from 'src/app/common/helper-functions';
 
 @Component({
   selector: 'main-layout',
@@ -22,6 +24,7 @@ import { LogoComponent } from './logo/logo.component';
 })
 export class MainLayoutComponent implements OnInit {
   @ViewChild('logo') logo: LogoComponent;
+
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
   public isBelowXl: boolean = false;
@@ -29,6 +32,11 @@ export class MainLayoutComponent implements OnInit {
 
   public popeLine;
   public isPopeAlive: boolean = false;
+
+  public showScaryModal: boolean = false;
+  public isScary: boolean = false;
+  private scaryAmbience;
+  private scarySound;
 
   public showAd: boolean = true;
   public isSharkAd: boolean = false;
@@ -82,6 +90,11 @@ export class MainLayoutComponent implements OnInit {
     this.popeLine.src = "../../../assets/sounds/pope.mp4";
 
     let randomAdNumber = Math.floor(Math.random() * (3-1) + 1);
+
+    this.scaryAmbience = new Audio();
+    this.scaryAmbience.src = "../../../assets/sounds/creepy_moans.ogg";
+    this.scarySound = new Audio();
+    this.scarySound.src = "../../../assets/sounds/scare.ogg";
 
     if (randomAdNumber === 1) {
       this.isSharkAd = true;
@@ -142,5 +155,13 @@ export class MainLayoutComponent implements OnInit {
       left: 0, 
       behavior: 'smooth' 
     });
+  }
+
+  async changeToScary(emitObject: ScaryEasterEggObj) {
+    this.showScaryModal = true;
+    this.isScary = true;
+    this.scarySound.play();
+    await wait(7000);
+    this.showScaryModal = false;
   }
 }
