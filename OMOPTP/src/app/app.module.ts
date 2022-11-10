@@ -20,6 +20,8 @@ import { CanvastarComponent } from './components/canvastar/canvastar.component';
 import { NewsComponent } from './screens/news/news.component';
 import { NewsarticleComponent } from './components/newsarticle/newsarticle.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import { themeReducer } from './state/theme.reducer';
 
 @NgModule({
   declarations: [
@@ -43,9 +45,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    StoreModule.forRoot({ theme: themeReducer })
   ],
-  providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

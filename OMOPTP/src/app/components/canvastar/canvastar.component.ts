@@ -1,6 +1,10 @@
 import { BreakpointState } from '@angular/cdk/layout';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store'
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
+import { wait } from 'src/app/common/helper-functions';
+import { changeTheme } from 'src/app/state/theme.actions';
+import { AppTheme } from 'src/app/common/types';
 
 @Component({
   selector: 'canvastar',
@@ -9,10 +13,10 @@ import { ScreenWidthService } from 'src/app/common/screen-width.service';
 export class CanvastarComponent implements AfterViewInit {
   @ViewChild('canvas', {static: true}) canvas: ElementRef<HTMLCanvasElement>;
   @ViewChild('starImage') starImage: ElementRef;
-  @ViewChild('kremowkaImage') kremowkaImage: ElementRef;
 
   private ctx: CanvasRenderingContext2D;
-  private alreadyLaunched: boolean = false;
+  private creepyEnabled: boolean = false;
+  private howManyStarsPressed: number = 0;
   private speed: number = 35;
   private longevity: number = 45
   public cuteSound;
@@ -22,7 +26,8 @@ export class CanvastarComponent implements AfterViewInit {
 
   constructor(
     private screenWidthService: ScreenWidthService,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private store: Store<{ theme: AppTheme }>,
   ) { }
 
   ngAfterViewInit(): void {
@@ -39,10 +44,15 @@ export class CanvastarComponent implements AfterViewInit {
   }
 
   async launchStar() {
+    this.howManyStarsPressed++;
     this.cuteSound.pause();
     this.cuteSound.currentTime = 0;
 
     this.leftSide = this.leftSide ? false : true;
+
+    if (this.howManyStarsPressed === 50 && !this.creepyEnabled) {
+      this.creepyEvent();
+    }
 
     let x = this.canvas.nativeElement.width / 2;
     let y = this.isBelowMd ? this.canvas.nativeElement.height * 1/3 : this.canvas.nativeElement.height * 1/4;
@@ -53,34 +63,33 @@ export class CanvastarComponent implements AfterViewInit {
     let width = this.isBelowMd ? 27 : 50;
     let height = this.isBelowMd ? 27 : 50;
 
-    let star = new StarElement(width, height, x, y, this.isPopeEnabled ? this.kremowkaImage.nativeElement : this.starImage.nativeElement, velocityX, velocityY);
+    let star = new StarElement(width, height, x, y, this.starImage.nativeElement, velocityX, velocityY);
 
-    this.alreadyLaunched = true;
     this.cuteSound.play();
     for (let i=0;i<this.longevity;i++) {
         this.drawStar(star);
         star.updateStar();
-        await this.wait(this.speed);
+        await wait(this.speed);
       }
-    this.alreadyLaunched = false;
-    }
+  }
 
-  drawStar(star: StarElement) {
+  async creepyEvent() {
+    this.creepyEnabled = true;
+    this.cuteSound.src = '../../../assets/sounds/BA_scary.ogg';
+
+    this.starImage.nativeElement.src = '../../../assets/img/scary_star.png';
+
+    this.store.dispatch(changeTheme({theme: 'scary'}));
+  }
+
+  drawStar(star: StarElement): void {
     this.ctx.clearRect(star.lastX, star.lastY, star.width++, star.height++);
     this.ctx.drawImage(star.imageSrc, star.x, star.y, star.width, star.height);
   }
 
-  randomiseNumber(max: number, min: number) {
+  randomiseNumber(max: number, min: number): number {
     return Math.floor(Math.random() * (max - min) + min);
   }
-
-  wait(ms) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-      resolve(ms)
-      }, ms )
-    })
-  }  
 }
 
 class StarElement {

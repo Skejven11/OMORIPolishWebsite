@@ -111,5 +111,7 @@
       }
     }
   },
-  "defaultProject": "OMOPTP"
+  "cli": {
+    "analytics": false
+  }
 }

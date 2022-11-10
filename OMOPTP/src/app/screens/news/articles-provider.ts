@@ -7,7 +7,7 @@ export var articles: NewsArticle[] = [
         text: `Siema! <br>
         Dzisiaj Halloween. To dobry pretekst, żeby napisać kolejną aktualizację. Mimo, że od ostatniego wpisu na stronie nieminął ledwo miesiąc, 
         to sporo się u nas wydarzyło. Pierwszą, i chyba najważniejszą zmianą jest nowa oficjalna nazwa naszej grupy. 
-        Powitajcie zatem „Studio Kiełkun” i jego przeuroczą, cebulkową maskotkę! Natomiast w kwestii prac nad spolszczeniem,
+        Powitajcie zatem "Studio Kiełkun" i jego przeuroczą, cebulkową maskotkę! Natomiast w kwestii prac nad spolszczeniem,
         mam dla was dwie dobre wiadomości. Przetłumaczyliśmy już 25% całej gry i dzisiaj ruszyły pierwsze testy spolszczenia. 
         To nie koniec niespodzianek. By umilić wam oczekiwanie, wspólnie z Yukki ułożyliśmy dla was 
         <a href="https://www.youtube.com/watch?v=LBwL6BB1jjs" class="text-red-500">playlistę</a> z piosenkami wybranymi przez członków naszego zespołu. 

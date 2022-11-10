@@ -1,4 +1,4 @@
-<div class="text-center text-black text-xl px-6">
+<div class="text-center text-xl px-6" [ngClass]="(appTheme$ | async).theme === 'scary' ? 'text-white': 'text-black'">
     <div class="flex justify-center items-center space-x-10 mb-2">
         <a href="https://discord.gg/8JTc36HNyM" class="hover:text-red-700"><fa-icon [icon]="faDiscord" size="2x"></fa-icon></a>
         <!--<a href="" class="hover:text-red-700"><fa-icon [icon]="faTwitter" size="2x"></fa-icon></a>...-->

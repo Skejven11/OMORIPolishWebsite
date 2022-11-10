@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+app-root {
+    @apply h-full block;
+}
+
 :root {
     --space-color: #6C0EFF;
     --red-color: #ff3e3e;
@@ -20,7 +24,7 @@
 
 html, body {
     font-family: 'OMORI';
-    @apply w-full h-full m-0 block;
+    @apply h-full w-full m-0;
 }
 
 div[ng-view] {
@@ -56,7 +60,21 @@ div[ng-view] {
 }
 
 .background {
-    background-image: white;
+    background-color: white;
+}
+
+.scary-modal-background {
+    background-image: url('/assets/img/creepy_bg.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.scary-background {
+    background-image: url('/assets/img/blackspace_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .text-shadow {

@@ -3,14 +3,19 @@ import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { ScreenHeightService } from 'src/app/common/screen-height.service';
 import { BreakpointState } from "@angular/cdk/layout"
 import { routerAnimation, contentAnimation, logoAnimation, adAnimation, scrollAnimation } from 'src/app/common/animations';
-import { ChildrenOutletContexts } from '@angular/router';
 import { LogoComponent } from './logo/logo.component';
+import { wait } from 'src/app/common/helper-functions';
+import { ChildrenOutletContexts } from '@angular/router';
+import { Store } from '@ngrx/store'
+import { selectTheme } from 'src/app/state/theme.selector';
+import { changeTheme } from 'src/app/state/theme.actions';
+import { AppState } from 'src/app/state/theme.reducer';
 
 @Component({
   selector: 'main-layout',
   templateUrl: './main-layout.component.html',
   styles: [
-    ':host { position: relative }'
+    ':host { position: relative; }'
   ],
   animations: [
     routerAnimation,
@@ -21,14 +26,22 @@ import { LogoComponent } from './logo/logo.component';
   ]
 })
 export class MainLayoutComponent implements OnInit {
+
+  appTheme$ = this.store.select(selectTheme);
+
   @ViewChild('logo') logo: LogoComponent;
+
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
   public isBelowXl: boolean = false;
-  public isAboveFHD: boolean = false;
+  public isBelowUHD: boolean = false;
 
   public popeLine;
   public isPopeAlive: boolean = false;
+
+  public showScaryModal: boolean = false;
+  private scaryAmbience;
+  private scarySound;
 
   public showAd: boolean = true;
   public isSharkAd: boolean = false;
@@ -54,7 +67,8 @@ export class MainLayoutComponent implements OnInit {
     private screenWidthService: ScreenWidthService,
     private screenHeightService: ScreenHeightService,
     private changeDetector: ChangeDetectorRef,
-    private contexts: ChildrenOutletContexts
+    private contexts: ChildrenOutletContexts,
+    private store: Store<AppState>,
   ) { }
 
   ngOnInit(): void {
@@ -73,16 +87,32 @@ export class MainLayoutComponent implements OnInit {
       this.changeDetector.detectChanges();
     })
 
-    this.screenHeightService.isAboveFHD().subscribe((isAboveFHD: BreakpointState) => {
-      this.isAboveFHD = isAboveFHD.matches;
+    this.screenHeightService.isBelowUHD().subscribe((isBelowUHD: BreakpointState) => {
+      this.isBelowUHD = isBelowUHD.matches;
       this.changeDetector.detectChanges();
+    })
+
+    this.store.select('theme').subscribe(result => {
+      switch (result.theme) {
+        case 'normal':
+          break;
+        case 'scary':
+          this.changeToScary();
+          break;
+        case 'pope':
+          break;
+      }
     })
 
     this.popeLine = new Audio();
     this.popeLine.src = "../../../assets/sounds/pope.mp4";
 
     let randomAdNumber = Math.floor(Math.random() * (3-1) + 1);
-    console.log(randomAdNumber);
+
+    this.scaryAmbience = new Audio();
+    this.scaryAmbience.src = "../../../assets/sounds/creepy_moans.ogg";
+    this.scarySound = new Audio();
+    this.scarySound.src = "../../../assets/sounds/scare.ogg";
 
     if (randomAdNumber === 1) {
       this.isSharkAd = true;
@@ -128,8 +158,7 @@ export class MainLayoutComponent implements OnInit {
     if (funnyNumber === "2137") {
       this.popeLine.load();
       this.popeLine.play();
-      this.logo.changeToPope();
-      this.isPopeAlive = true;
+      this.store.dispatch(changeTheme({ theme: 'pope'}));
     }
   }
 
@@ -143,5 +172,12 @@ export class MainLayoutComponent implements OnInit {
       left: 0, 
       behavior: 'smooth' 
     });
+  }
+
+  async changeToScary() {
+    this.showScaryModal = true;
+    this.scarySound.play();
+    await wait(7000);
+    this.showScaryModal = false;
   }
 }
