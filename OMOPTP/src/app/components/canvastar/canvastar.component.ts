@@ -1,8 +1,10 @@
 import { BreakpointState } from '@angular/cdk/layout';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Output, ViewChild, EventEmitter } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store'
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
-import { ScaryEasterEggObj } from 'src/app/common/types';
 import { wait } from 'src/app/common/helper-functions';
+import { changeTheme } from 'src/app/state/theme.actions';
+import { AppTheme } from 'src/app/common/types';
 
 @Component({
   selector: 'canvastar',
@@ -11,8 +13,6 @@ import { wait } from 'src/app/common/helper-functions';
 export class CanvastarComponent implements AfterViewInit {
   @ViewChild('canvas', {static: true}) canvas: ElementRef<HTMLCanvasElement>;
   @ViewChild('starImage') starImage: ElementRef;
-
-  @Output() emitScaryEasteregg = new EventEmitter<ScaryEasterEggObj>();
 
   private ctx: CanvasRenderingContext2D;
   private creepyEnabled: boolean = false;
@@ -26,7 +26,8 @@ export class CanvastarComponent implements AfterViewInit {
 
   constructor(
     private screenWidthService: ScreenWidthService,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private store: Store<{ theme: AppTheme }>,
   ) { }
 
   ngAfterViewInit(): void {
@@ -49,7 +50,7 @@ export class CanvastarComponent implements AfterViewInit {
 
     this.leftSide = this.leftSide ? false : true;
 
-    if (this.howManyStarsPressed === 10 && !this.creepyEnabled) {
+    if (this.howManyStarsPressed === 50 && !this.creepyEnabled) {
       this.creepyEvent();
     }
 
@@ -78,8 +79,7 @@ export class CanvastarComponent implements AfterViewInit {
 
     this.starImage.nativeElement.src = '../../../assets/img/scary_star.png';
 
-    this.emitScaryEasteregg.emit({logoSrc: 'scary_bunny', bgSrc: ''});
-
+    this.store.dispatch(changeTheme({theme: 'scary'}));
   }
 
   drawStar(star: StarElement): void {

@@ -1,7 +1,7 @@
-<div class="flex justify-center items-center w-full overflow-hidden relative" [ngClass]="isScary ? 'scary-background' : 'background'">
+<div class="flex justify-center items-center w-full overflow-hidden relative" [ngClass]="(appTheme$ | async).theme === 'scary' ? 'scary-background' : 'background'">
     <div class="flex flex-col justify-center items-center"
     [ngClass]="isBelowLg && isBelowMd ? 'w-full mt-4' : isBelowLg ? 'w-[90%] mt-12' : 'w-[67%] mt-12'">
-        <logo #logo class="relative" (emitScaryBgChange)="changeToScary($event)" [@logoAnimation]="isReloading ? false : true" [ngClass]="isBelowMd ? 'mb-4' : 'mb-14'"></logo>
+        <logo #logo class="relative" (emitScaryBgChange)="changeToScary()" [@logoAnimation]="isReloading ? false : true" [ngClass]="isBelowMd ? 'mb-4' : 'mb-14'"></logo>
         <div class="relative w-full" [@contentAnimation]="isReloading ? false : true">
             <div class="h-6"></div>
             <navbar class="w-full absolute top-1 z-[2]"></navbar>

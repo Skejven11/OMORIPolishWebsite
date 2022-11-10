@@ -2,24 +2,26 @@ import { ChangeDetectorRef, Component, ElementRef, EventEmitter, OnInit, Output,
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { BreakpointState } from "@angular/cdk/layout";
 import { CanvastarComponent } from 'src/app/components/canvastar/canvastar.component';
-import { ScaryEasterEggObj } from 'src/app/common/types';
+import { Store } from '@ngrx/store'
+import { selectTheme } from 'src/app/state/theme.selector';
 
 @Component({
   selector: 'logo',
   templateUrl: './logo.component.html',
 })
 export class LogoComponent implements OnInit {
-  @ViewChild('canvastar') canvastar!: CanvastarComponent;
 
-  @Output() emitScaryBgChange = new EventEmitter<ScaryEasterEggObj>();
+  public appTheme$ = this.store.select(selectTheme);
+
+  @ViewChild('canvastar') canvastar!: CanvastarComponent;
 
   public isBelowMd: boolean = false;
   public isBelowLg: boolean = false;
   public bunny: string = "bunny";
-  public isScary: boolean = false;
 
   constructor(
     private screenWidthService: ScreenWidthService,
+    private store: Store,
   ) { }
 
   ngOnInit(): void {
@@ -30,22 +32,23 @@ export class LogoComponent implements OnInit {
     this.screenWidthService.isBelowLg().subscribe((isBelowLg: BreakpointState) => {
       this.isBelowLg = isBelowLg.matches;
     })
+
+    this.store.select(selectTheme).subscribe(result => {
+      switch(result.theme) {
+        case 'scary':
+          this.bunny = "scary_bunny"
+          break;
+        case 'normal':
+          this.bunny = "bunny"
+          break;
+        case 'pope':
+          this.bunny = "aubrey2137"
+          break;
+      }
+    })
   }
 
   callCanvas() {
-    this.canvastar.launchStar()
+    this.canvastar.launchStar();
   }
-
-  changeToPope() {
-    this.bunny = "aubrey2137"
-    this.canvastar.isPopeEnabled = true;
-    this.canvastar.cuteSound.src = "../../../assets/sounds/jestmozliwe.mp3";
-  }
-
-  changeToScary(emitObject: {logoSrc: string, bgSrc: string}) {
-    this.bunny = emitObject.logoSrc;
-    this.isScary = !this.isScary
-    this.emitScaryBgChange.emit(emitObject);
-  }
-
 }
