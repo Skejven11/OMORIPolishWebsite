@@ -5,6 +5,7 @@ import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { wait } from 'src/app/common/helper-functions';
 import { changeTheme } from 'src/app/state/theme.actions';
 import { AppTheme } from 'src/app/common/types';
+import { selectTheme } from 'src/app/state/theme.selector';
 
 @Component({
   selector: 'canvastar',
@@ -23,6 +24,7 @@ export class CanvastarComponent implements AfterViewInit {
   private isBelowMd: boolean = false;
   private leftSide: boolean = false;
   public isPopeEnabled: boolean = false;
+  public appTheme$ = this.store.select(selectTheme);
 
   constructor(
     private screenWidthService: ScreenWidthService,
@@ -40,6 +42,13 @@ export class CanvastarComponent implements AfterViewInit {
     this.screenWidthService.isBelowMd().subscribe((isBelowMd: BreakpointState) => {
       this.isBelowMd = isBelowMd.matches;
       this.changeDetector.detectChanges();
+    })
+
+    this.appTheme$.subscribe(result => {
+      if (result.theme === 'pope') {
+        this.cuteSound.src = "../../../assets/sounds/jestmozliwe.mp3";
+        this.starImage.nativeElement.src = '../../../assets/img/kremowka.png';
+      }
     })
   }
 
