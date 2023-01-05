@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { faDiscord, faTwitter, faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faTwitter, faInstagram, faTiktok, faYoutube, faSpotify, faTumblr } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { popAnimation } from 'src/app/common/animations';
 
@@ -19,6 +19,8 @@ export class TeamItemComponent implements OnInit {
   @Input() tiktokLink: string = "";
   @Input() youtubeLink: string = "";
   @Input() siteLink: string = "";
+  @Input() tumblrLink: string = "";
+  @Input() spotifyLink: string = "";
   @Input() imgSrc: string = "";
   @Input() altPortrait: string = "";
   public faDiscord = faDiscord;
@@ -27,6 +29,8 @@ export class TeamItemComponent implements OnInit {
   public faTiktok = faTiktok;
   public faLink = faLink;
   public faYoutube = faYoutube;
+  public faSpotify = faSpotify;
+  public faTumblr = faTumblr;
 
   public showPopUp: boolean = false;
 
@@ -38,6 +42,8 @@ export class TeamItemComponent implements OnInit {
     this.instagramLink = this.instagramLink != "" ? "https://instagram.com/" + this.instagramLink : "";
     this.tiktokLink = this.tiktokLink != "" ? "https://tiktok.com/@" + this.tiktokLink : "";
     this.youtubeLink = this.youtubeLink != "" ? "https://www.youtube.com/channel/" + this.youtubeLink : "";
+    this.spotifyLink = this.spotifyLink != "" ? "https://open.spotify.com/user/" + this.spotifyLink : "";
+    this.tumblrLink = this.tumblrLink != "" ? "https://www.tumblr.com/" + this.tumblrLink : "";
   }
 
   onDiscordClick() {
