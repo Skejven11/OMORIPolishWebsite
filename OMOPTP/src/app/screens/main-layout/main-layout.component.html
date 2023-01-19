@@ -18,7 +18,7 @@
     <div class="">
         <img class="absolute left-[5%] cursor-pointer z-10 no-select" (click)="onClickFirst()" 
         [ngStyle]="{'top': -100 + firstBulb*10 + 'px'}" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowMd">
-        <img class="absolute left-[20%] cursor-pointer z-10 no-select" (click)="onClickSecond()" 
+        <img class="absolute left-[22%] cursor-pointer z-10 no-select" (click)="onClickSecond()" 
         [ngStyle]="{'top': -300 + secondBulb*10 + 'px'}"  src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
         <img class="absolute cursor-pointer z-10 no-select" (click)="onClickThird()" 
         [ngStyle]="{'top': -300 + thirdBulb*10 + 'px'}" [ngClass]="isBelowLg ? 'right-[20%]' : 'right-[20%]'" src="../../../assets/img/bulbLarge.gif" alt="" *ngIf="!isBelowLg">
