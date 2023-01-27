@@ -9,7 +9,7 @@ export var articles: NewsArticle[] = [
         Jeżeli chodzi o tłumaczenie, to aktualny stan przetłumaczonego tekstu to ponad 40%! Zbliżamy się wielkimi krokami do połowy i z tej 
         okazji mamy również dla was parę niespodzianek, które zostaną w swoim czasie ujawnione na naszym discordzie (na którego serdecznie zapraszamy). 
         Od ostatniego czasu testerzy tłumaczenia nie próżnowali i bardzo pomagają nam wykrywać błędy, czy to w dialogach, walce czy przetłumaczonych grafikach.<br>
-        Kontynuując trend tworzenia naszych playlist, Oskar przygotował <a href="https://www.youtube.com/watch?v=LBwL6BB1jjs" class="text-red-500">kolejną</a>
+        Kontynuując trend tworzenia naszych playlist, Oskar przygotował <a href="https://www.youtube.com/watch?v=M-1xScJcRp8" class="text-red-500">kolejną</a>
         składankę utworów wybranych przez członków naszego discorda. Tym razem tematem były święta, a to tylko pierwsza część! Następna ukaże się niedługo, 
         więc obserwujcie nasz kanał na youtube (jak zwykle, linki znajdują się na dole strony).<br> Nasz zespół życzy Wam dobrego roku 2023, 
         oby był to rok w którym OMORI będzie można przejść w całości po polsku. <br>
