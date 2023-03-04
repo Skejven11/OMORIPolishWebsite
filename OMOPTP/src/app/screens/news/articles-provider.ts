@@ -6,7 +6,7 @@ export var articles: NewsArticle[] = [
         author: 'Yukki',
         text: `Dzień dobry Cebulki!<br>
         Jeśli brak wam energii (w szczególności z rana), zaleca się przesłuchanie „Good Morning” w 
-        <a href="https://www.youtube.com/watch?v=-CYHgPclI-g" class="text-red-500">wykonaniu naszego zespołu</a>. 9/10 lekarzy potwierdza wysoką skuteczność tej metody.<br>
+        <a href="https://www.youtube.com/watch?v=vyM_VHHqGaM" class="text-red-500">wykonaniu naszego zespołu</a>. 9/10 lekarzy potwierdza wysoką skuteczność tej metody.<br>
         Kiedy szefowa wyszła na ciastko, po kryjomu zaśpiewaliśmy „Good Morning”. Ale co to by było za spolszczenie, gdyby tekst byłby po angielsku? 
         Nie martwcie się, o to też zadbaliśmy, a głównie Oskar. Gdy szefowa wróciła i już miała nam spuścić manto za obijanie się, usłyszała śpiew swojej siły roboczej. 
         Właśnie wtedy zdała sobie sprawę, że częściej powinna wychodzić na ciastko.
