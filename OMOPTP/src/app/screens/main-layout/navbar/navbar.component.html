@@ -5,16 +5,23 @@
     <div class=" basis-1/2 flex justify-center">
         <omo-button [text]="'AKTUALNOŚCI'" [link]="'/news'" [isActive]="activatedRoute[1]"></omo-button>
     </div>
+    <div *ngIf="(appTheme$ | async).theme === 3"
+         class=" basis-1/2 flex justify-center">
+         <omo-button [text]="'BALBINKA'" [link]="'/balbinka'" [isActive]="activatedRoute[5]"></omo-button>
+    </div>
     <div class=" basis-1/2 flex justify-center">
         <omo-button [text]="'POBIERZ'" [link]="'/download'" [isActive]="activatedRoute[2]"></omo-button>
     </div>
     <div class=" basis-1/2 flex justify-center">
         <omo-button [text]="'ZESPÓŁ'" [link]="'/team'" [isActive]="activatedRoute[3]"></omo-button>
     </div>
-    <div class=" basis-1/2 flex justify-center">
+    <div *ngIf="(appTheme$ | async).theme !== 3"
+         class=" basis-1/2 flex justify-center">
         <omo-button [text]="'FAQ'" [link]="'/faq'" [isActive]="activatedRoute[4]"></omo-button>
     </div>
 </div>
+
+<blackspace-door></blackspace-door>
 
 <div class="flex w-full justify-center items-center flex-col" *ngIf="isBelowMd">
     <button class="w-10 h-10 border border-black bg-white flex justify-center items-center" (click)="toggleMenu()"
@@ -26,8 +33,9 @@
     <div class="border-4 border-white w-64 bg-black text-white flex flex-col" *ngIf="displayMenu" [@popMenu]>
         <menu-item [text]="'GŁÓWNA'" [link]="''" (click)="toggleMenu()"></menu-item>
         <menu-item [text]="'AKTUALNOŚCI'" [link]="'/news'" (click)="toggleMenu()"></menu-item>
+        <menu-item *ngIf="(appTheme$ | async).theme === 3" [text]="'BALBINKA'" [link]="'/balbinka'" (click)="toggleMenu()"></menu-item>
         <menu-item [text]="'POBIERZ'" [link]="'/download'" (click)="toggleMenu()"></menu-item>
         <menu-item [text]="'ZESPÓŁ'" [link]="'/team'" (click)="toggleMenu()"></menu-item>
-        <menu-item [text]="'FAQ'" [link]="'/faq'" (click)="toggleMenu()" class="mb-2"></menu-item>
+        <menu-item *ngIf="(appTheme$ | async).theme !== 3" [text]="'FAQ'" [link]="'/faq'" (click)="toggleMenu()" class="mb-2"></menu-item>
     </div>
 </div>

@@ -1,5 +1,5 @@
 
-<div>
+<div class="relative">
     <h1 class="text-center mb-16" [ngClass]="isBelowMd ? 'text-4xl leading-8' : 'text-[3.25rem] leading-10'">
         <b>Witajcie na stronie fanowskiego spolszczenia OMORI!</b>
     </h1>
@@ -19,4 +19,9 @@
     </div>
     <hr class="mb-16">
     <newsarticle [article]="latestArticle"></newsarticle>
+
+  <key-component [id]="5"
+                 top="20%"
+                 right="-40px">
+  </key-component>
 </div>

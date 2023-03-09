@@ -1,17 +1,18 @@
 import { BreakpointState } from '@angular/cdk/layout';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
-import { Store } from '@ngrx/store'
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { wait } from 'src/app/common/helper-functions';
-import { changeTheme } from 'src/app/state/theme.actions';
 import { AppTheme } from 'src/app/common/types';
-import { selectTheme } from 'src/app/state/theme.selector';
+import { Select, Store } from '@ngxs/store';
+import { ChangeTheme } from 'src/app/state/theme.actions';
+import { ThemeState } from 'src/app/state/theme.state';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'canvastar',
   templateUrl: './canvastar.component.html'
 })
-export class CanvastarComponent implements AfterViewInit {
+export class CanvastarComponent implements AfterViewInit, OnDestroy {
   @ViewChild('canvas', {static: true}) canvas: ElementRef<HTMLCanvasElement>;
   @ViewChild('starImage') starImage: ElementRef;
 
@@ -23,14 +24,14 @@ export class CanvastarComponent implements AfterViewInit {
   public cuteSound;
   private isBelowMd: boolean = false;
   private leftSide: boolean = false;
-  public isPopeEnabled: boolean = false;
-  public appTheme$ = this.store.select(selectTheme);
+  private themeSubscription: Subscription;
+
+  @Select(ThemeState.theme) appTheme$: Observable<{theme: AppTheme}>
 
   constructor(
     private screenWidthService: ScreenWidthService,
-    private changeDetector: ChangeDetectorRef,
-    private store: Store<{ theme: AppTheme }>,
-  ) { }
+    private store: Store,
+  ) {}
 
   ngAfterViewInit(): void {
     this.ctx = this.canvas.nativeElement.getContext('2d');
@@ -41,15 +42,13 @@ export class CanvastarComponent implements AfterViewInit {
 
     this.screenWidthService.isBelowMd().subscribe((isBelowMd: BreakpointState) => {
       this.isBelowMd = isBelowMd.matches;
-      this.changeDetector.detectChanges();
     })
 
-    this.appTheme$.subscribe(result => {
-      if (result.theme === 'pope') {
-        this.cuteSound.src = "../../../assets/sounds/jestmozliwe.mp3";
-        this.starImage.nativeElement.src = '../../../assets/img/kremowka.png';
-      }
-    })
+    this.listenToThemeChange();
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription.unsubscribe();
   }
 
   async launchStar() {
@@ -59,7 +58,7 @@ export class CanvastarComponent implements AfterViewInit {
 
     this.leftSide = this.leftSide ? false : true;
 
-    if (this.howManyStarsPressed === 50 && !this.creepyEnabled) {
+    if (this.howManyStarsPressed === 1 && !this.creepyEnabled) {
       this.creepyEvent();
     }
 
@@ -84,20 +83,39 @@ export class CanvastarComponent implements AfterViewInit {
 
   async creepyEvent() {
     this.creepyEnabled = true;
-    this.cuteSound.src = '../../../assets/sounds/BA_scary.ogg';
-
-    this.starImage.nativeElement.src = '../../../assets/img/scary_star.png';
-
-    this.store.dispatch(changeTheme({theme: 'scary'}));
+    this.store.dispatch(new ChangeTheme(AppTheme.scary));
   }
 
-  drawStar(star: StarElement): void {
+  private drawStar(star: StarElement): void {
     this.ctx.clearRect(star.lastX, star.lastY, star.width++, star.height++);
     this.ctx.drawImage(star.imageSrc, star.x, star.y, star.width, star.height);
   }
 
-  randomiseNumber(max: number, min: number): number {
+  private randomiseNumber(max: number, min: number): number {
     return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  private listenToThemeChange(): void {
+    this.appTheme$.subscribe(result => {
+      switch (result.theme) {
+        case AppTheme.normal:
+          this.cuteSound.src = "../../../assets/sounds/BA_cute.ogg";
+          this.starImage.nativeElement.src = "../../../assets/img/star.png";
+          break;
+        case AppTheme.pope:
+          this.cuteSound.src = "../../../assets/sounds/jestmozliwe.mp3";
+          this.starImage.nativeElement.src = '../../../assets/img/kremowka.png';
+          break;
+        case AppTheme.scary:
+          this.cuteSound.src = '../../../assets/sounds/BA_scary.ogg';
+          this.starImage.nativeElement.src = '../../../assets/img/scary_star.png';
+          break;
+        case AppTheme.balbinka:
+          this.cuteSound.src = "../../../assets/sounds/meow.mp3";
+          this.starImage.nativeElement.src = "../../../assets/img/star.png";
+          break;
+      }
+    })
   }
 }
 

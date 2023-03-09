@@ -24,7 +24,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@ngrx/store": "^14.3.2",
+    "@ngxs-labs/immer-adapter": "^3.0.5",
+    "@ngxs/store": "^3.7.6",
     "rxjs": "~6.6.0",
     "zone.js": "~0.11.4"
   },

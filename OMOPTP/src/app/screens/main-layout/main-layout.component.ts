@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { ScreenHeightService } from 'src/app/common/screen-height.service';
 import { BreakpointState } from "@angular/cdk/layout"
@@ -6,10 +6,11 @@ import { routerAnimation, contentAnimation, logoAnimation, adAnimation, scrollAn
 import { LogoComponent } from './logo/logo.component';
 import { wait } from 'src/app/common/helper-functions';
 import { ChildrenOutletContexts } from '@angular/router';
-import { Store } from '@ngrx/store'
-import { selectTheme } from 'src/app/state/theme.selector';
-import { changeTheme } from 'src/app/state/theme.actions';
-import { AppState } from 'src/app/state/theme.reducer';
+import { Select, Store } from '@ngxs/store'
+import { ChangeTheme } from 'src/app/state/theme.actions';
+import { AppTheme } from 'src/app/common/types';
+import { ThemeState } from 'src/app/state/theme.state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'main-layout',
@@ -27,7 +28,7 @@ import { AppState } from 'src/app/state/theme.reducer';
 })
 export class MainLayoutComponent implements OnInit {
 
-  appTheme$ = this.store.select(selectTheme);
+  @Select(ThemeState.theme) appTheme$: Observable<{theme: AppTheme}>
 
   @ViewChild('logo') logo: LogoComponent;
 
@@ -68,7 +69,7 @@ export class MainLayoutComponent implements OnInit {
     private screenHeightService: ScreenHeightService,
     private changeDetector: ChangeDetectorRef,
     private contexts: ChildrenOutletContexts,
-    private store: Store<AppState>,
+    private store: Store,
   ) { }
 
   ngOnInit(): void {
@@ -92,15 +93,9 @@ export class MainLayoutComponent implements OnInit {
       this.changeDetector.detectChanges();
     })
 
-    this.store.select('theme').subscribe(result => {
-      switch (result.theme) {
-        case 'normal':
-          break;
-        case 'scary':
-          this.changeToScary();
-          break;
-        case 'pope':
-          break;
+    this.appTheme$.subscribe(result => {
+      if (result.theme === AppTheme.scary) {
+        this.changeToScary();
       }
     })
 
@@ -158,7 +153,7 @@ export class MainLayoutComponent implements OnInit {
     if (funnyNumber === "2137") {
       this.popeLine.load();
       this.popeLine.play();
-      this.store.dispatch(changeTheme({ theme: 'pope'}));
+      this.store.dispatch(new ChangeTheme(AppTheme.pope));
     }
   }
 

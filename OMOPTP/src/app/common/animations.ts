@@ -94,4 +94,19 @@ export const routerAnimation =
     ])
   ]);
 
+  export const whiteSpaceAnimation =
+  trigger('whiteSpaceAnimation', [
+    transition('void => *', [
+      style({opacity: '0'}),
+      animate('6s',
+        style({opacity: '1'})
+      )
+    ]),
+    transition('* => void', [
+      animate('4s',
+        style({opacity: '0'})
+      )
+    ]),
+  ]);
+
   

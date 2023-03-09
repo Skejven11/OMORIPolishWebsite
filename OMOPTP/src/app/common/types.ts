@@ -1,1 +1,6 @@
-export type AppTheme = "normal" | "pope" | "scary";
+export enum AppTheme {
+    normal,
+    scary,
+    pope,
+    balbinka
+}

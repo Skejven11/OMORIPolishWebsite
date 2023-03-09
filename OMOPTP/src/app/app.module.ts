@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DownloadComponent } from './screens/download/download.component';
@@ -20,8 +19,13 @@ import { CanvastarComponent } from './components/canvastar/canvastar.component';
 import { NewsComponent } from './screens/news/news.component';
 import { NewsarticleComponent } from './components/newsarticle/newsarticle.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
-import { themeReducer } from './state/theme.reducer';
+import { BlackspaceDoorComponent } from './components/blackspace-door/blackspace-door.component';
+import { NgxsModule } from '@ngxs/store';
+import { ThemeState } from './state/theme.state';
+import { BalbinkaComponent } from './screens/balbinka/balbinka.component';
+import { BalbinkaGuard } from './screens/balbinka/balbinka.guard';
+import { KeyComponent } from './components/key/key.component';
+import { DoorState } from './state/door.state';
 
 @NgModule({
   declarations: [
@@ -39,16 +43,22 @@ import { themeReducer } from './state/theme.reducer';
     TeamItemComponent,
     CanvastarComponent,
     NewsComponent,
-    NewsarticleComponent
+    NewsarticleComponent,
+    BlackspaceDoorComponent,
+    BalbinkaComponent,
+    KeyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    StoreModule.forRoot({ theme: themeReducer })
+    NgxsModule.forRoot([ThemeState, DoorState])
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    BalbinkaGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

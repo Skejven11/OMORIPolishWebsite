@@ -1,5 +1,5 @@
-<div class="flex justify-center items-center w-full overflow-hidden relative" [ngClass]="(appTheme$ | async).theme === 'scary' ? 'scary-background' : 'background'">
-    <div class="flex flex-col justify-center items-center"
+<div class="flex justify-center items-center w-full overflow-hidden relative" [ngClass]="(appTheme$ | async).theme === 1 ? 'scary-background' : 'background'">
+    <div class="flex flex-col justify-center items-center z-[1]"
     [ngClass]="isBelowLg && isBelowMd ? 'w-full mt-4' : isBelowLg ? 'w-[90%] mt-12' : 'w-[67%] mt-12'">
         <logo #logo class="relative" (emitScaryBgChange)="changeToScary()" [@logoAnimation]="isReloading ? false : true" [ngClass]="isBelowMd ? 'mb-4' : 'mb-14'"></logo>
         <div class="relative w-full" [@contentAnimation]="isReloading ? false : true">
@@ -31,6 +31,12 @@
         <img class="absolute right-[5%] no-select" [ngClass]="isBelowLg ? 'bottom-[-325px]' : 'bottom-[-200px]'" src="../../../assets/img/abbi.gif" alt="" *ngIf="!isBelowMd">
     </div>
 
+    <div *ngIf="(appTheme$ | async).theme === 1" class="z-0">
+        <img class="absolute left-[10%] bottom-0" src="../../../assets/img/expand.gif">
+        <img class="absolute bottom-1/2 left-[100px]" src="../../../assets/img/heads.png">
+        <img class="absolute bottom-[30%] right-[-200px]" src="../../../assets/img/long.png" alt="" *ngIf="!isBelowXl">
+    </div>
+
     <div class="fixed border-2 bottom-[-2px] border-black z-10 bg-white pr-1 pl-1 pt-1" 
     [@adAnimation]="isReloading ? false : true" *ngIf="showAd && !isReloading" [ngClass]="isBelowLg ? 'w-full h-[18rem]' : 'w-[60rem] h-[18rem]'">
         <div class="flex flex-col bg-black w-full h-full ad-image relative"
@@ -49,8 +55,15 @@
             <img src="../../../assets/img/red-hand-rotated.png" class="w-10 h-14">
         </div>
     </div>
+    <key-component bottom="100px"
+                   right="30%"
+                   [id]="0">
+    </key-component>
 </div>
 
 <div class="fixed w-full h-full modal-window top-0 left-0 z-30 flex items-center justify-center scary-modal-background" *ngIf="showScaryModal">
     <img class="no-select" width="1000px" src="../../../assets/img/stare.gif"alt="">
 </div>
+
+<img src="../../../assets/img/creepy_bg.gif" width="50" height="50" class="hidden">
+<img src="../../../assets/img/stare.gif" width="50" height="50" class="hidden">

@@ -20,9 +20,9 @@ export var articles: NewsArticle[] = [
         <br><br>
         Wi-elo!`,
         photos: [
-            '4.1.png',
-            '4.2.png',
-            '4.3.png'
+            'screens/4.1.png',
+            'screens/4.2.png',
+            'screens/4.3.png'
         ]
     },
     {
@@ -41,9 +41,9 @@ export var articles: NewsArticle[] = [
         <br><br>
         Pozdro i z essą!`,
         photos: [
-            '3.1.png',
-            '3.2.png',
-            '3.3.png'
+            'screens/3.1.png',
+            'screens/3.2.png',
+            'screens/3.3.png'
         ]
     },
     {
@@ -61,9 +61,9 @@ export var articles: NewsArticle[] = [
         <br><br>
         Do zobaczenia!`,
         photos: [
-            '2.1.png',
-            '2.2.png',
-            '2.3.png'
+            'screens/2.1.png',
+            'screens/2.2.png',
+            'screens/2.3.png'
         ]
     },
     {
@@ -83,9 +83,9 @@ export var articles: NewsArticle[] = [
             <br><br>
             To tyle na razie!`,
         photos: [
-            '1.1.jpg',
-            '1.2.png',
-            '1.3.png'
+            'screens/1.1.jpg',
+            'screens/1.2.png',
+            'screens/1.3.png'
         ]
     },
 ] 

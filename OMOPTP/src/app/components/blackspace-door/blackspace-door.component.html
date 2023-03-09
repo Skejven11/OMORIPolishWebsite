@@ -1,0 +1,17 @@
+<div *ngIf="(appTheme$ | async).theme === 1" 
+    class="blackspace-door-container"
+     (click)="onClick()">
+    <img #img src="/assets/img/bs_door.png">
+</div>
+
+<div *ngIf="doorOpened"
+     class="fixed w-full h-full top-0 left-0 z-30 bg-white opacity-100"
+     [@whiteSpaceAnimation]>
+</div>
+
+<audio *ngIf="(appTheme$ | async).theme === 1"
+       src="../../../assets/sounds/creepy_moans.ogg" 
+       autoplay 
+       loop 
+       [volume]="0.8">
+</audio>

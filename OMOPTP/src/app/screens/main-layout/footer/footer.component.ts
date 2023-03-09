@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { faDiscord, faTwitter, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons';
-import { Store } from '@ngrx/store';
-import { selectTheme } from 'src/app/state/theme.selector';
+import { Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { AppTheme } from 'src/app/common/types';
+import { ThemeState } from 'src/app/state/theme.state';
 
 @Component({
   selector: 'footer',
@@ -13,9 +15,9 @@ export class FooterComponent implements OnInit {
   public faYoutube = faYoutube;
   public faTiktok = faTiktok;
 
-  public appTheme$ = this.store.select(selectTheme);
+  @Select(ThemeState.theme) appTheme$: Observable<{theme: AppTheme}>;
 
-  constructor(private readonly store: Store) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

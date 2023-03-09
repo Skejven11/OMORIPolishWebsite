@@ -2,6 +2,13 @@ import { BreakpointState } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 
+export type NewsArticle = {
+  date?: string,
+  author?: string,
+  text?: string,
+  photos?: string[]
+}
+
 @Component({
   selector: 'newsarticle',
   templateUrl: './newsarticle.component.html',
@@ -55,12 +62,4 @@ export class NewsarticleComponent implements OnInit {
       }
     })
   }
-
-}
-
-export type NewsArticle = {
-  date: string,
-  author: string,
-  text: string,
-  photos?: string[]
 }

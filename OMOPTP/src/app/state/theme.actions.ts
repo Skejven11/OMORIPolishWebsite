@@ -1,7 +1,6 @@
-import { createAction, props } from '@ngrx/store';
 import { AppTheme } from '../common/types';
 
-export const changeTheme = createAction(
-    '[Theme] Change Theme',
-    props<{ theme: AppTheme }>()
-);
+export class ChangeTheme {
+    static readonly type = '[Theme] ChangeTheme';
+    constructor(public theme: AppTheme) {}
+}

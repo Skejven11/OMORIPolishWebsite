@@ -6,6 +6,8 @@ import { FrontpageComponent } from './screens/frontpage/frontpage.component';
 import { MainLayoutComponent } from './screens/main-layout/main-layout.component';
 import { TeamComponent } from './screens/team/team.component';
 import { NewsComponent } from './screens/news/news.component';
+import { BalbinkaComponent } from './screens/balbinka/balbinka.component';
+import { BalbinkaGuard } from './screens/balbinka/balbinka.guard';
 
 const routes: Routes = [
   {
@@ -36,6 +38,12 @@ const routes: Routes = [
         path: 'news',
         component: NewsComponent,
         data: { animation: 'newsPage'}
+      },
+      {
+        path: 'balbinka',
+        component: BalbinkaComponent,
+        data: { animation: 'balbinka'},
+        canActivate: [BalbinkaGuard]
       }
     ]
   }

@@ -1,8 +1,12 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ScreenWidthService } from 'src/app/common/screen-width.service';
 import { BreakpointState } from "@angular/cdk/layout"
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 import { NavigationEnd, Router } from '@angular/router';
+import { Select } from '@ngxs/store';
+import { ThemeState } from 'src/app/state/theme.state';
+import { AppTheme } from 'src/app/common/types';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'navbar',
@@ -20,9 +24,11 @@ import { NavigationEnd, Router } from '@angular/router';
   ]
 })
 export class NavbarComponent implements OnInit {
+  @Select(ThemeState.theme) appTheme$: Observable<{theme: AppTheme}>;
+
   public isBelowMd: boolean = false;
   public displayMenu: boolean = false;
-  public activatedRoute: boolean[] = [false, false, false, false]
+  public activatedRoute: boolean[] = [false, false, false, false, false]
 
   constructor(
     private screenWidthService: ScreenWidthService,
@@ -62,6 +68,9 @@ export class NavbarComponent implements OnInit {
         break;
       case '/faq':
         this.activatedRoute[4] = true;
+        break;
+      case '/balbinka':
+        this.activatedRoute[5] = true;
         break;
     } 
   }

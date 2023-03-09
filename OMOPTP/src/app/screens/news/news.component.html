@@ -1,4 +1,11 @@
-<div *ngFor="let article of articles">
+<div class="relative">
+  <div *ngFor="let article of articles">
     <newsarticle [article]="article"></newsarticle>
     <hr class="mb-10 mt-10">
+  </div>
+
+  <key-component [id]="4"
+                 top="50%"
+                 left="-40px">
+  </key-component>
 </div>
