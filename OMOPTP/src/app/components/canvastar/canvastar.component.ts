@@ -58,7 +58,7 @@ export class CanvastarComponent implements AfterViewInit, OnDestroy {
 
     this.leftSide = this.leftSide ? false : true;
 
-    if (this.howManyStarsPressed === 1 && !this.creepyEnabled) {
+    if (this.howManyStarsPressed === 30 && !this.creepyEnabled) {
       this.creepyEvent();
     }
 
