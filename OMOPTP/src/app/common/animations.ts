@@ -84,7 +84,7 @@ export const routerAnimation =
       left: '-100px'
     })),
     state('open', style({
-      left: '1px'
+      left: '-6px'
     })),
     transition('open => closed', [
       animate('0.25s ease-in-out')
@@ -107,6 +107,22 @@ export const routerAnimation =
         style({opacity: '0'})
       )
     ]),
+  ]);
+
+  export const secretMenuAnimation =
+  trigger('secretMenuAnimation', [
+    state('closed', style({
+      left: '-240px'
+    })),
+    state('open', style({
+      left: '-5px'
+    })),
+    transition('open => closed', [
+      animate('0.5s ease-in-out')
+    ]),
+    transition('closed => open', [
+      animate('0.5s ease-in-out')
+    ])
   ]);
 
   

@@ -1,0 +1,43 @@
+<div *ngIf="hasAnyEasterEggBeenFound"
+     class="easter-egg-menu-container">
+  <div class="menu-button-container">
+    <div class="menu-button-content"
+         (click)="onButtonClick()">
+      <img [src]="showMenu ? '../../../assets/img/red-hand-flipped.png' : '../../../assets/img/red-hand.png'"
+           width="35px"
+           height="40px">
+    </div>
+  </div>
+  <div class="menu-container">
+    <div class="menu-content">
+      <h2>Znalezione Sekrety</h2>
+      <div class="menu-item">
+        <span>1 - </span>
+        <span (click)="changeTheme(AppTheme.normal)">
+          Normalna strona
+        </span>
+      </div>
+      <div class="menu-item">
+        <span>2 - </span>
+        <span *ngIf="discoveredEasterEggs.scary" 
+              (click)="changeTheme(AppTheme.scary)">
+              Blackspace
+        </span>
+      </div>
+      <div class="menu-item">
+        <span>3 - </span>
+        <span *ngIf="discoveredEasterEggs.balbinka"
+              (click)="changeTheme(AppTheme.balbinka)">
+              Balbinka
+        </span>
+      </div>
+      <div class="menu-item">
+        <span>4 - </span>
+        <span *ngIf="discoveredEasterEggs.pope"
+              (click)="changeTheme(AppTheme.pope)">
+              Papierz
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

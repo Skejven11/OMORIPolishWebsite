@@ -1,0 +1,71 @@
+:host {
+  position: fixed;
+  bottom: 34%;
+  z-index: 3;
+
+  .easter-egg-menu-container {
+    position: relative;
+
+    .menu-button-container {
+      position: absolute;
+      top: 20px;
+      right: -44px;
+      width: 50px;
+      height: 50px;
+      border: solid 2px black;
+      border-left: 0px;
+
+      .menu-button-content {
+        border: solid 3px white;
+        border-left: solid 3px black;
+        background-color: black;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    .menu-container {
+      width: 240px;
+      height: 235px;
+      border: solid 2px black;
+
+      .menu-content {
+        height: 100%;
+        border: solid 3px white;
+        background-color: black;
+        text-align: center;
+        color: white;
+        padding: 0px 14px 0px 14px;
+
+        h2 {
+          font-size: 28px;
+          margin-bottom: 6px;
+        }
+
+        .menu-item {
+          margin-top: 6px;
+          font-size: 24px;
+          display: flex;
+
+          span {
+            display: block;
+          }
+          
+          :nth-child(2) {
+            flex-grow: 0.7;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s;
+
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

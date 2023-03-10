@@ -26,6 +26,7 @@ import { BalbinkaComponent } from './screens/balbinka/balbinka.component';
 import { BalbinkaGuard } from './screens/balbinka/balbinka.guard';
 import { KeyComponent } from './components/key/key.component';
 import { DoorState } from './state/door.state';
+import { EasterEggMenuComponent } from './components/easter-egg-menu/easter-egg-menu.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DoorState } from './state/door.state';
     NewsarticleComponent,
     BlackspaceDoorComponent,
     BalbinkaComponent,
-    KeyComponent
+    KeyComponent,
+    EasterEggMenuComponent
   ],
   imports: [
     BrowserModule,

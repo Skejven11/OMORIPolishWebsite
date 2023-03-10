@@ -16,12 +16,14 @@ export interface AppStateModel {
 @Injectable()
 export class ThemeState {
   @Action(ChangeTheme)
-  changeTheme(ctx: StateContext<AppStateModel>, action: AppTheme) {
+  changeTheme(ctx: StateContext<AppStateModel>, action: any) {
     const state = ctx.getState();
+
+    localStorage.setItem(action.theme.toString(), 'true');
     ctx.patchState({
       ...state,
       theme: action
-    })
+    });
   }
 
   @Selector() static theme(state: AppStateModel): AppTheme {
