@@ -38,12 +38,6 @@ export class EasterEggMenuComponent implements OnInit, OnDestroy {
 
   private themeSubscription: Subscription;
 
-  get hasAnyEasterEggBeenFound(): boolean {
-    return this.discoveredEasterEggs.balbinka 
-      || this.discoveredEasterEggs.scary
-      || this.discoveredEasterEggs.pope;
-  }
-
   constructor(private readonly store: Store) { }
 
   ngOnInit(): void {
