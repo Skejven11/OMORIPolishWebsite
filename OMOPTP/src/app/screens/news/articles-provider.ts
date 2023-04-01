@@ -5,6 +5,7 @@ export var articles: NewsArticle[] = [
         date: '01.04.2023',
         author: 'Studio Kiełkun',
         text: `Drogie Kiełkuny!<br>
+        !!! Żart na prima aprilis !!! <br>
         Czekaliśmy na ten moment od bardzo dawna i w końcu możemy z dumą ogłosić, że spolszczenie do gry OMORI jest w pełni ukończone! 
         To było naprawdę wielkie wyzwanie, ale dzięki pasji i determinacji wielu członków zespołu udało nam się je osiągnąć.
         <br>
@@ -12,8 +13,8 @@ export var articles: NewsArticle[] = [
         którzy byli z nami przez cały ten czas, wspierając nasze wysiłki i zachęcając nas do dalszej pracy. 
         To dzięki Waszemu wsparciu udało nam się dotrzeć do końca tego projektu i zrealizować nasze marzenie o spolszczeniu tej wspaniałej gry.
         <br><br>
-        Jeśli jeszcze nie widzieliście, zobaczcie trailer, który przygotowaliśmy. Po pobraniu tłumaczenia <a [routerLink]="'/faq'" class="text-red-500">z naszej strony</a>
-        koniecznie podzielcie się z nami swoimi wrażeniami lub screenshotami z gry na naszym serwerze na Discordzie!
+        Jeśli jeszcze nie widzieliście, zobaczcie trailer, który przygotowaliśmy. Dla zainteresowanych, możecie pobrać wersję tłumaczenia na prima aprilis
+        <a href="https://drive.google.com/drive/folders/18B0AQx6sdyDc-yyfu6rEwtLZK4efiOdm?usp=sharing" class="text-red-500"> tutaj</a>.
         <br><br>
         Do zobaczenia jeszcze kiedyś!`,
         video: 'https://www.youtube.com/embed/CGRa4iKiWHo'

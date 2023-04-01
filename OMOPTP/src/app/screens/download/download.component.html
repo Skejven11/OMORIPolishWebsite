@@ -1,11 +1,13 @@
-<div class="download-container text-2xl flex justify-center items-center h-full relative">
+<div class="download-container text-[40px] text-center flex justify-center items-center h-full relative">
     <key-component [id]="2"
                    top="200px"
                    right="50%">
     </key-component>
+    Tu znajdować się będzie tłumaczenie do pobrania oraz instrukcje jak je zainstalować.
 
     <a href="https://drive.google.com/drive/folders/18B0AQx6sdyDc-yyfu6rEwtLZK4efiOdm?usp=sharing" 
-       class="download-button-container">
+       class="download-button-container"
+       *ngIf="false">
         <div class="download-button-inner-container">
             <div class="text-container">
                 Pobierz spolszczenie!
