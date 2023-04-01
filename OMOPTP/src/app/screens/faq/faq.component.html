@@ -3,8 +3,11 @@
         <h2 class="text-2xl mb-4 font-extrabold">
             1. Czy dalej trwają pracę nad tłumaczeniem i czy określona jest data wydania?
         </h2>
-        <p class="mb-4 text-xl">
+        <p class="mb-4 text-xl" *ngIf="false">
             Tak, dalej pracujemy nad spolszczeniem, niestety nie możemy jeszcze wskazać daty wydania. Celujemy w koniec aktualnego roku, ale co będzie czas pokaże.
+        </p>
+        <p class="mb-4 text-xl" *ngIf="true">
+            Spolszczenie jest już gotowe! Zachęcamy do pobrania.
         </p>
         <hr>
     </div>

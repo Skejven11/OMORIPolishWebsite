@@ -1,0 +1,31 @@
+app-download {
+  height: 600px;
+  width: 100%;
+  display: inline-block;
+
+  .download-button-container {
+    border: solid 2px black;
+    background-color: white;
+    padding: 4px;
+    height: 120px;
+    width: 400px;
+    transition: color 0.3s;
+
+    .download-button-inner-container {
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .text-container {
+        font-size: 50px;
+      }
+    }
+
+    &:hover {
+      color: red;
+    }
+  }
+}

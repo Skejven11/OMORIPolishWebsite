@@ -17,6 +17,10 @@
                 <img width="250px" src="../../../assets/img/{{photo}}">
             </div>
         </div>
+        <div *ngIf="article.video != null" class="w-full p-6 border-white border-2">
+            <iframe [src]="article.video | safe" allowfullscreen class="w-full" [ngClass]="isBelowMd ? 'h-[250px]' : 'h-[500px]'">
+            </iframe> 
+        </div>
     </div>
 </div>
 

@@ -2,6 +2,23 @@ import { NewsArticle } from "src/app/components/newsarticle/newsarticle.componen
 
 export var articles: NewsArticle[] = [
     {
+        date: '01.04.2023',
+        author: 'Studio Kiełkun',
+        text: `Drogie Kiełkuny!<br>
+        Czekaliśmy na ten moment od bardzo dawna i w końcu możemy z dumą ogłosić, że spolszczenie do gry OMORI jest w pełni ukończone! 
+        To było naprawdę wielkie wyzwanie, ale dzięki pasji i determinacji wielu członków zespołu udało nam się je osiągnąć.
+        <br>
+        Teraz, gdy już możecie zagrać w pełni spolszczoną wersję gry, chcielibyśmy podziękować wszystkim, 
+        którzy byli z nami przez cały ten czas, wspierając nasze wysiłki i zachęcając nas do dalszej pracy. 
+        To dzięki Waszemu wsparciu udało nam się dotrzeć do końca tego projektu i zrealizować nasze marzenie o spolszczeniu tej wspaniałej gry.
+        <br><br>
+        Jeśli jeszcze nie widzieliście, zobaczcie trailer, który przygotowaliśmy. Po pobraniu tłumaczenia <a [routerLink]="'/faq'" class="text-red-500">z naszej strony</a>
+        koniecznie podzielcie się z nami swoimi wrażeniami lub screenshotami z gry na naszym serwerze na Discordzie!
+        <br><br>
+        Do zobaczenia jeszcze kiedyś!`,
+        video: 'https://www.youtube.com/embed/CGRa4iKiWHo'
+    },
+    {
         date: '04.03.2023',
         author: 'Yukki',
         text: `Dzień dobry Cebulki!<br>
