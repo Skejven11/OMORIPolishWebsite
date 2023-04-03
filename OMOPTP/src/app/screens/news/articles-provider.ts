@@ -14,7 +14,7 @@ export var articles: NewsArticle[] = [
         To dzięki Waszemu wsparciu udało nam się dotrzeć do końca tego projektu i zrealizować nasze marzenie o spolszczeniu tej wspaniałej gry.
         <br><br>
         Jeśli jeszcze nie widzieliście, zobaczcie trailer, który przygotowaliśmy. Dla zainteresowanych, możecie pobrać wersję tłumaczenia na prima aprilis
-        <a href="https://drive.google.com/drive/folders/18B0AQx6sdyDc-yyfu6rEwtLZK4efiOdm?usp=sharing" class="text-red-500"> tutaj</a>.
+        <a href="https://drive.google.com/drive/folders/1kBuPOhe_p-t7qQOTYL1SAk4w3cP3R1K_" class="text-red-500"> tutaj</a>.
         <br><br>
         Do zobaczenia jeszcze kiedyś!`,
         video: 'https://www.youtube.com/embed/CGRa4iKiWHo'
