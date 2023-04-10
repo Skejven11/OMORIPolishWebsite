@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faDiscord, faTwitter, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faTwitter, faYoutube, faTiktok, faSteam } from '@fortawesome/free-brands-svg-icons';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { AppTheme } from 'src/app/common/types';
@@ -14,6 +14,7 @@ export class FooterComponent implements OnInit {
   public faTwitter = faTwitter;
   public faYoutube = faYoutube;
   public faTiktok = faTiktok;
+  public faSteam = faSteam;
 
   @Select(ThemeState.theme) appTheme$: Observable<{theme: AppTheme}>;
 
