@@ -2,6 +2,23 @@ import { NewsArticle } from "src/app/components/newsarticle/newsarticle.componen
 
 export var articles: NewsArticle[] = [
     {
+        date: '28.05.2023',
+        author: 'Yukki',
+        text: `Siema cebulki!!<br>
+        Już czuć lato, a wraz z tym koniec szkoły. Przede wszystki gratki dla ósmoklasistów oraz maturzystów, wszyscy odwaliliście kawał dobrej roboty! Powodzonka również wszystkim
+        uczniom, którzy właśnie walczą o wyższe ocenki.<br>
+        Następne mesiące oznaczają więcej czasu wolnego, więc będzie można na luzie w coś pograć, na przykład w... (nie uwierzycie) OMORI, które już niebawem wzbogaci się o moda ze
+        spolszczeniem. Jesteśmy już bliżej niż dalej, ale praca dalej wre.<br>
+        W międzyczasie możecie obczaić nasze inne media jak kanał na Youtube (niedawno wpadła nowa playlista~) czy konto na TikToku.
+        <br><br>
+        Do następnego!`,
+        photos: [
+            'screens/5.1.png',
+            'screens/5.2.png',
+            'screens/5.3.png'
+        ]
+    },
+    {
         date: '01.04.2023',
         author: 'Studio Kiełkun',
         text: `Drogie Kiełkuny!<br>
