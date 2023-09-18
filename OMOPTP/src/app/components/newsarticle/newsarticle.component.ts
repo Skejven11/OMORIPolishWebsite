@@ -7,7 +7,8 @@ export type NewsArticle = {
   author?: string,
   text?: string,
   photos?: string[],
-  video?: string
+  video?: string,
+  finalPhoto?: string,
 }
 
 @Component({

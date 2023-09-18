@@ -12,6 +12,7 @@ import { Observable, Subscription } from 'rxjs';
   templateUrl: './logo.component.html',
 })
 export class LogoComponent implements OnInit, OnDestroy {
+  AppTheme = AppTheme;
 
   @Select(ThemeState.theme) appTheme$: Observable<{theme: AppTheme}>
 

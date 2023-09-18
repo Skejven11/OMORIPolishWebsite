@@ -2,6 +2,23 @@ import { NewsArticle } from "src/app/components/newsarticle/newsarticle.componen
 
 export var articles: NewsArticle[] = [
     {
+        date: '18.09.2023',
+        author: 'Yukki',
+        text: `Witajcie w białej przestrzeni.
+        <br>
+        Zaczerpnijcie trochę spokoju w tej nicości. Spokoju, który się wam przyda podróżując między snem a jawą. Tu zaczyna się wasza przygoda ze spolszczeniem OMORI. 
+        <br>
+        Tak, zgadza się, spolszczenie OMORI jest już w 100% gotowe! Harowanie przez rok z kawałkiem dało swój owoc. Jest to projekt, z którym to wszystko zaczęliśmy, 
+        co nie oznacza, że zwalniamy tempo! Aktualnie pracujemy nad czymś, o czym już niedługo się dowiecie... 
+        <br><br>
+        Dziękujemy wszystkim cebulkom, które towarzyszyły nam w projekcie! Zostańcie z nami, wpadniecie na naszego discorda czy inne media (które znajdziecie na dole stronki). 
+        Nie dalibyśmy rady bez naszych kiełkunków, o których więcej możecie się dowiedzieć w zakładce ZESPÓŁ. Instrukcje jak pobrać modyfikację znajdziecie tutaj. 
+        Jeśli znajdziecie jakiekolwiek błędy w grze, prosimy o wysłanie ich na nasz serwer. Przypomnijcie sobie fabułę OMORI bądź dopiero ją odkryjcie, słodkich snów z OMORI po Polsku! 
+        <br><br>
+        Dzięki i do zobaczenia!`,
+        finalPhoto: 'screens/miniaturka.png'
+    },
+    {
         date: '28.05.2023',
         author: 'Yukki',
         text: `Siema cebulki!!<br>
