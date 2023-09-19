@@ -12,7 +12,8 @@ export var articles: NewsArticle[] = [
         co nie oznacza, że zwalniamy tempo! Aktualnie pracujemy nad czymś, o czym już niedługo się dowiecie... 
         <br><br>
         Dziękujemy wszystkim cebulkom, które towarzyszyły nam w projekcie! Zostańcie z nami, wpadniecie na naszego discorda czy inne media (które znajdziecie na dole stronki). 
-        Nie dalibyśmy rady bez naszych kiełkunków, o których więcej możecie się dowiedzieć w zakładce ZESPÓŁ. Instrukcje jak pobrać modyfikację znajdziecie tutaj. 
+        Nie dalibyśmy rady bez naszych kiełkunków, o których więcej możecie się dowiedzieć w zakładce <a href="/#/team" class="text-red-500">ZESPÓŁ</a>.
+        W zakładce <a href="/#/download" class="text-red-500">POBIERZ</a> znajdziecie link do spolsczenia. 
         Jeśli znajdziecie jakiekolwiek błędy w grze, prosimy o wysłanie ich na nasz serwer. Przypomnijcie sobie fabułę OMORI bądź dopiero ją odkryjcie, słodkich snów z OMORI po Polsku! 
         <br><br>
         Dzięki i do zobaczenia!`,
