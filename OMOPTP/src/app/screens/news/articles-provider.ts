@@ -13,7 +13,7 @@ export var articles: NewsArticle[] = [
         <br><br>
         Dziękujemy wszystkim cebulkom, które towarzyszyły nam w projekcie! Zostańcie z nami, wpadniecie na naszego discorda czy inne media (które znajdziecie na dole stronki). 
         Nie dalibyśmy rady bez naszych kiełkunków, o których więcej możecie się dowiedzieć w zakładce <a href="/#/team" class="text-red-500">ZESPÓŁ</a>.
-        W zakładce <a href="/#/download" class="text-red-500">POBIERZ</a> znajdziecie link do spolsczenia. 
+        W zakładce <a href="/#/download" class="text-red-500">POBIERZ</a> znajdziecie link do spolszczenia. 
         Jeśli znajdziecie jakiekolwiek błędy w grze, prosimy o wysłanie ich na nasz serwer. Przypomnijcie sobie fabułę OMORI bądź dopiero ją odkryjcie, słodkich snów z OMORI po Polsku! 
         <br><br>
         Dzięki i do zobaczenia!`,
